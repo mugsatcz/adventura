@@ -2,16 +2,16 @@
   "title": "SCENE_C3_PLATFORM",
   "background": "res://art/scenes/c3_platform.png",
   "placeholder_color": "#8fa3b3",
-  "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
-  "depth_scale": [740, 900, 0.85, 1.0],
-  "lili_start": [300, 830],
-  "entries": {"c3_station": [300, 830], "c3_coach": [1560, 830]},
+  "walk_area": [[60, 660], [1860, 660], [1880, 790], [40, 790]],
+  "depth_scale": [660, 790, 0.85, 1.0],
+  "lili_start": [300, 750],
+  "entries": {"c3_station": [300, 750], "c3_coach": [1560, 750]},
   "hotspots": [
     {
       "id": "blanket",
       "name": "HS_C3_PLATFORM_BLANKET",
-      "polygon": [[700, 430], [960, 430], [960, 640], [700, 640]],
-      "walk_to": [830, 790],
+      "polygon": [[760, 445], [1100, 445], [1100, 640], [760, 640]],
+      "walk_to": [930, 730],
       "interact": [
         {
           "once": "got_deka",
@@ -24,15 +24,15 @@
       "id": "wire_scrap",
       "name": "HS_C3_PLATFORM_WIRE",
       "if": "!got_wire",
-      "polygon": [[1100, 690], [1250, 690], [1250, 770], [1100, 770]],
-      "walk_to": [1180, 810],
+      "polygon": [[300, 690], [460, 690], [460, 780], [300, 780]],
+      "walk_to": [380, 750],
       "interact": [{"set": "got_wire"}, {"give": "wire"}, {"say": "SAY_PLATFORM_WIRE"}]
     },
     {
       "id": "exit_coach",
       "name": "HS_C3_PLATFORM_EXIT_COACH",
-      "polygon": [[1300, 380], [1560, 380], [1560, 740], [1300, 740]],
-      "walk_to": [1430, 800],
+      "polygon": [[1430, 120], [1680, 120], [1680, 740], [1430, 740]],
+      "walk_to": [1560, 745],
       "exit": "c3_coach",
       "exit_if": "door_open",
       "blocked": "SAY_COACH_DOOR_LOCKED",

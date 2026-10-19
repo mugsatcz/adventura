@@ -67,11 +67,25 @@ func play(events: Array) -> void:
 			ui.show_image(Color(String(e.get("color", "#000000"))), String(e["image"]), tr(String(e.get("caption", ""))))
 		elif e.has("image_clear"):
 			ui.clear_image()
+		elif e.has("minigame"):
+			await _minigame(String(e["minigame"]))
 		elif e.has("cutscene_begin"):
 			ui.letterbox(true)
 		elif e.has("cutscene_end"):
 			ui.letterbox(false)
 	_refresh()
+
+
+func _minigame(id: String) -> void:
+	if "--smoke" in OS.get_cmdline_user_args():
+		return
+	match id:
+		"race":
+			var game := RaceGame.new()
+			ui.add_child(game)
+			await game.finished
+			game.queue_free()
+			voice.silence()
 
 
 func _enter_room(id: String) -> void:

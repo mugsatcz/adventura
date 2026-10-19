@@ -14,12 +14,14 @@
         "color": "#e8d27a",
         "caption": "CUT_C6_RACE_CAPTION"
       },
+      {"say": "CUT_C6_RACE_0", "who": "narrator"},
+      {"image_clear": true},
+      {"minigame": "race"},
       {"say": "CUT_C6_RACE_1", "who": "narrator"},
       {"say": "CUT_C6_RACE_2", "who": "mayor"},
       {"say": "CUT_C6_RACE_3", "who": "cylindr"},
       {"give": "golden_horseshoe"},
       {"give": "new_blanket"},
-      {"image_clear": true},
       {"goto": "c7_home"}
     ]
   },

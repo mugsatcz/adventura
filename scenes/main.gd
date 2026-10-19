@@ -38,6 +38,9 @@ func _ready() -> void:
 	for arg in OS.get_cmdline_user_args():
 		if smoke and arg.begins_with("--scene=") and Game.data.scenes.has(arg.substr(8)):
 			Game.state.scene_id = arg.substr(8)
+		if smoke and arg.begins_with("--flags="):
+			for f in arg.substr(8).split(","):
+				Game.state.set_flag(f)
 	rules = Rules.new(Game.data, Game.state)
 	await _enter_room(Game.state.scene_id)
 	if smoke:
@@ -112,6 +115,13 @@ func _refresh() -> void:
 	ui.set_inventory(Game.state.inventory, Game.data.items)
 	if room:
 		room.set_hotspots(rules.hotspots())
+		var alt: Dictionary = room.data.get("background_alt", {})
+		var path := String(room.data.get("background", ""))
+		if not alt.is_empty() and Game.state.check(alt.get("if", "")):
+			path = String(alt.get("path", path))
+		if path != room.background_path:
+			room.background_path = path
+			room.set_background(_texture(path))
 
 
 func _say(who: String, key: String) -> void:

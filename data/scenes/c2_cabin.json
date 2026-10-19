@@ -1,6 +1,7 @@
 {
   "title": "SCENE_C2_CABIN",
   "background": "res://art/scenes/c2_cabin.png",
+  "background_alt": {"if": "cabin_inside", "path": "res://art/scenes/c2_cabin_inside.png"},
   "placeholder_color": "#7a5a3a",
   "walk_area": [[200, 740], [1700, 740], [1800, 900], [100, 900]],
   "depth_scale": [740, 900, 0.85, 1.0],
@@ -10,7 +11,7 @@
     {
       "id": "exit_crossroads",
       "name": "HS_EXIT_CROSSROADS",
-      "polygon": [[0, 350], [190, 350], [190, 880], [0, 880]],
+      "polygon": [[0, 70], [330, 70], [330, 560], [500, 560], [500, 800], [0, 800]],
       "walk_to": [260, 830],
       "exit": "c2_crossroads"
     },
@@ -18,16 +19,16 @@
       "id": "barrel",
       "name": "HS_BARREL",
       "if": "!cabin_inside & !barrel_moved",
-      "polygon": [[300, 560], [480, 560], [480, 740], [300, 740]],
-      "walk_to": [400, 800],
+      "polygon": [[735, 495], [875, 495], [875, 610], [735, 610]],
+      "walk_to": [800, 800],
       "interact": [{"set": "barrel_moved"}, {"say": "SAY_BARREL_MOVE"}]
     },
     {
       "id": "window",
       "name": "HS_WINDOW",
       "if": "!cabin_inside",
-      "polygon": [[800, 380], [1060, 380], [1060, 560], [800, 560]],
-      "walk_to": [930, 800],
+      "polygon": [[985, 350], [1160, 350], [1160, 535], [985, 535]],
+      "walk_to": [1070, 800],
       "interact": [
         {"if": "barrel_moved", "then": [{"set": "cabin_inside"}, {"say": "SAY_WINDOW_IN"}], "else": "SAY_WINDOW_HIGH"}
       ]
@@ -36,16 +37,16 @@
       "id": "door",
       "name": "HS_DOOR",
       "if": "!cabin_inside",
-      "polygon": [[1250, 420], [1450, 420], [1450, 740], [1250, 740]],
-      "walk_to": [1350, 800],
+      "polygon": [[1200, 330], [1375, 330], [1375, 600], [1200, 600]],
+      "walk_to": [1300, 790],
       "interact": "SAY_DOOR_LOCKED"
     },
     {
       "id": "hat",
       "name": "HS_HAT",
       "if": "cabin_inside",
-      "polygon": [[500, 420], [640, 420], [640, 540], [500, 540]],
-      "walk_to": [560, 780],
+      "polygon": [[790, 270], [990, 270], [990, 545], [790, 545]],
+      "walk_to": [880, 790],
       "interact": [
         {"once": "hat_seen", "do": [{"say": "SAY_HAT_1"}, {"say": "SAY_HAT_2"}], "else": "SAY_HAT_AGAIN"}
       ]
@@ -54,16 +55,16 @@
       "id": "note",
       "name": "HS_NOTE",
       "if": "cabin_inside & !took_note",
-      "polygon": [[900, 500], [1060, 500], [1060, 640], [900, 640]],
-      "walk_to": [980, 790],
+      "polygon": [[1090, 330], [1215, 330], [1215, 690], [1090, 690]],
+      "walk_to": [1150, 800],
       "interact": [{"set": "took_note"}, {"give": "timetable_note"}, {"say": "SAY_NOTE_1"}, {"say": "SAY_NOTE_2"}]
     },
     {
       "id": "chest",
       "name": "HS_CHEST",
       "if": "cabin_inside & !chest_open",
-      "polygon": [[1300, 580], [1560, 580], [1560, 740], [1300, 740]],
-      "walk_to": [1430, 800],
+      "polygon": [[1245, 575], [1670, 575], [1670, 770], [1245, 770]],
+      "walk_to": [1450, 820],
       "interact": "SAY_CHEST_LOCK",
       "use": {
         "timetable_note": [{"set": "chest_open"}, {"give": "county_map"}, {"say": "SAY_CHEST_OPEN"}]

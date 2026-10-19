@@ -296,6 +296,8 @@ SAY_DEKA_TAKE,"Hromova deka! Je tady, tak je Hrom někde blízko."
 SAY_DEKA_DONE,Deku už mám.
 HS_C3_PLATFORM_BLANKET,Deka na zábradlí
 SAY_COACH_DOOR_LOCKED,Dveře jsou zamčené. Něco tenkého by je možná otevřelo.
+HS_C3_PLATFORM_WIRE,Kus drátu
+SAY_PLATFORM_WIRE,"Na peróně leží kus drátu. Možná se bude hodit."
 SAY_COACH_DOOR_PICK,Stejný trik jako zloději! Zámek cvakl.
 HS_C3_PLATFORM_EXIT_COACH,Dveře do vagónu
 HINT_PL_DOOR_1,Dveře do vagónu jsou zamčené.

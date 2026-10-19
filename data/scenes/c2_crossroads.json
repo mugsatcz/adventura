@@ -21,7 +21,7 @@
     {
       "id": "exit_cabin",
       "name": "HS_EXIT_CABIN",
-      "polygon": [[0, 350], [200, 350], [200, 850], [0, 850]],
+      "polygon": [[0, 150], [300, 150], [300, 700], [0, 700]],
       "walk_to": [140, 820],
       "exit": "c2_cabin",
       "exit_if": "signpost_up",
@@ -30,7 +30,7 @@
     {
       "id": "exit_lookout",
       "name": "HS_EXIT_LOOKOUT",
-      "polygon": [[1720, 350], [1920, 350], [1920, 850], [1720, 850]],
+      "polygon": [[1650, 530], [1920, 530], [1920, 850], [1650, 850]],
       "walk_to": [1780, 820],
       "exit": "c2_lookout",
       "exit_if": "has:county_map",
@@ -39,7 +39,7 @@
     {
       "id": "signpost",
       "name": "HS_SIGNPOST",
-      "polygon": [[940, 380], [1060, 380], [1060, 700], [940, 700]],
+      "polygon": [[890, 310], [1095, 310], [1095, 680], [890, 680]],
       "walk_to": [1000, 780],
       "interact": [
         {"once": "signpost_up", "do": [
@@ -52,7 +52,7 @@
     {
       "id": "tracks",
       "name": "HS_TRACKS",
-      "polygon": [[350, 790], [640, 790], [640, 880], [350, 880]],
+      "polygon": [[500, 550], [880, 550], [880, 880], [500, 880]],
       "walk_to": [700, 830],
       "interact": "SAY_TRACKS_LOOK",
       "use": {
@@ -62,7 +62,7 @@
     {
       "id": "grass",
       "name": "HS_GRASS",
-      "polygon": [[1250, 790], [1560, 790], [1560, 880], [1250, 880]],
+      "polygon": [[1250, 640], [1560, 640], [1560, 780], [1250, 780]],
       "walk_to": [1200, 830],
       "interact": "SAY_GRASS_LOOK",
       "use": {
@@ -73,8 +73,8 @@
       "id": "branch",
       "name": "HS_BRANCH",
       "if": "!took_branch",
-      "polygon": [[1480, 560], [1620, 560], [1620, 700], [1480, 700]],
-      "walk_to": [1550, 770],
+      "polygon": [[1690, 340], [1840, 340], [1840, 520], [1690, 520]],
+      "walk_to": [1640, 780],
       "interact": [{"set": "took_branch"}, {"give": "dry_branch"}, {"say": "SAY_TAKE_BRANCH"}]
     }
   ],

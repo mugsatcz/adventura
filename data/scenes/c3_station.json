@@ -33,14 +33,14 @@
     {
       "id": "cart",
       "name": "HS_C3_STATION_CART",
-      "polygon": [[1100, 520], [1420, 520], [1420, 740], [1100, 740]],
-      "walk_to": [1000, 800],
+      "polygon": [[1250, 440], [1900, 440], [1900, 700], [1250, 700]],
+      "walk_to": [1450, 790],
       "interact": [{"say": "SAY_CART_PUSH"}, {"cutscene": "departure"}, {"goto": "c3_platform"}]
     },
     {
       "id": "train",
       "name": "HS_C3_STATION_TRAIN",
-      "polygon": [[300, 380], [900, 380], [900, 700], [300, 700]],
+      "polygon": [[120, 235], [1240, 235], [1240, 690], [120, 690]],
       "walk_to": [600, 800],
       "interact": "SAY_STATION_TRAIN"
     }

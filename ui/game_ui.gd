@@ -37,6 +37,7 @@ var _say_token := 0
 var _press_item := ""
 var _press_pos := Vector2.ZERO
 var _dragging := false
+var _selected := ""
 
 
 func _ready() -> void:
@@ -74,6 +75,32 @@ func set_inventory(items: Array[String], defs: Dictionary) -> void:
 		slot.gui_input.connect(_on_slot_input.bind(id))
 		_slots_box.add_child(slot)
 		_slots[id] = slot
+	if not _slots.has(_selected):
+		_selected = ""
+	_apply_selection()
+
+
+## The item picked for use (tap an item, then tap where to use it), or "".
+func selected_item() -> String:
+	return _selected
+
+
+func select_item(id: String) -> void:
+	_selected = id if _slots.has(id) else ""
+	_apply_selection()
+
+
+func _apply_selection() -> void:
+	for id in _slots:
+		var slot: Panel = _slots[id]
+		if not slot.has_meta("base"):
+			slot.set_meta("base", slot.get_theme_stylebox("panel"))
+		var style: StyleBoxFlat = slot.get_meta("base")
+		if id == _selected:
+			style = style.duplicate()
+			style.set_border_width_all(8)
+			style.border_color = Color("#ffd54a")
+		slot.add_theme_stylebox_override("panel", style)
 
 
 func _make_slot(id: String, def: Dictionary) -> Panel:

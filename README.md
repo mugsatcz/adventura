@@ -12,8 +12,8 @@ Bez grafiky se scény kreslí jako placeholdery: barevná plocha s obrysy klikac
 ## Ovládání
 
 - Ťuknutí na místo: Lili tam dojde. Ťuknutí na předmět nebo postavu: interakce.
-- Přetažení předmětu z inventáře na místo: použití. Na jiný předmět: spojení.
-- Ťuknutí na předmět v inventáři: Lili ho popíše.
+- Ťuknutí na předmět v inventáři ho vybere (žlutý rámeček). Další ťuknutí na místo ve scéně ho tam použije, ťuknutí na jiný předmět je spojí. Ťuknutí na vybraný předmět ho popíše a výběr zruší, ťuknutí na prázdné místo výběr zruší.
+- Předmět jde i přetáhnout z inventáře na místo nebo na jiný předmět.
 - Podržení prstu na scéně: zvýrazní všechna klikací místa.
 - Tlačítko Rada: šerif napoví, každým stisknutím víc.
 

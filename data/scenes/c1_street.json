@@ -1,0 +1,45 @@
+{
+  "title": "SCENE_C1_STREET",
+  "background": "res://art/scenes/c1_street.png",
+  "placeholder_color": "#b58a52",
+  "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
+  "depth_scale": [740, 900, 0.85, 1.0],
+  "lili_start": [200, 820],
+  "entries": {"c1_yard": [200, 820], "c1_sheriff": [700, 830], "c1_shop": [1330, 830]},
+  "hotspots": [
+    {
+      "id": "exit_ranch",
+      "name": "HS_EXIT_RANCH",
+      "polygon": [[0, 350], [180, 350], [180, 880], [0, 880]],
+      "walk_to": [140, 820],
+      "exit": "c1_yard"
+    },
+    {
+      "id": "exit_sheriff",
+      "name": "HS_SHERIFF_OFFICE",
+      "polygon": [[560, 380], [820, 380], [820, 740], [560, 740]],
+      "walk_to": [690, 800],
+      "exit": "c1_sheriff"
+    },
+    {
+      "id": "exit_shop",
+      "name": "HS_SHOP",
+      "polygon": [[1180, 380], [1480, 380], [1480, 740], [1180, 740]],
+      "walk_to": [1330, 800],
+      "exit": "c1_shop"
+    },
+    {
+      "id": "poster",
+      "name": "HS_POSTER",
+      "polygon": [[900, 420], [1060, 420], [1060, 640], [900, 640]],
+      "walk_to": [980, 790],
+      "interact": [
+        {"once": "poster_seen", "do": [{"say": "SAY_POSTER_1"}, {"say": "SAY_POSTER_2"}], "else": "SAY_POSTER_AGAIN"}
+      ]
+    }
+  ],
+  "hints": [
+    {"id": "street_shop", "if": "!rosie_testimony", "keys": ["HINT_STREET_1", "HINT_STREET_2", "HINT_STREET_3"]},
+    {"id": "street_tom", "if": "rosie_testimony & !sheriff_doubts", "keys": ["HINT_STREET_TOM_1", "HINT_STREET_TOM_2", "HINT_STREET_TOM_3"]}
+  ]
+}

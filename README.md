@@ -1,6 +1,6 @@
 # Lili a hřebec Hrom
 
-Kreslená point-and-click adventura pro Android v Godotu 4.5. Pro děti 8 až 11 let, 23 scén v 7 kapitolách.
+Kreslená point-and-click adventura pro Android v Godotu 4.5. Pro děti 8 až 11 let, 23 scén v 7 kapitolách. Hratelné jsou zatím kapitoly 1 a 2 (8 scén), zbytek přibývá podle [design dokumentu](https://claude.ai/code/artifact/d8c64046-ecab-4cda-881c-07e08a4c3348).
 
 ## Spuštění
 
@@ -24,7 +24,7 @@ godot --headless --path . --import
 godot --headless --path . --script res://tests/run_tests.gd
 ```
 
-Kontrolují data všech scén a přehrají návody v `tests/walkthroughs/`. Rychlá zkouška celé hry bez okna: `godot --headless --path . -- --smoke`.
+Kontrolují data všech scén a přehrají návody v `tests/walkthroughs/`. Rychlá zkouška celé hry bez okna: `godot --headless --path . -- --smoke`. S přepínačem `--scene=c2_lookout` začne zkouška v jiné scéně, což se hodí při ladění.
 
 ## Struktura
 

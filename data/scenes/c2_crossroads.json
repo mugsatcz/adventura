@@ -1,0 +1,87 @@
+{
+  "title": "SCENE_C2_CROSSROADS",
+  "background": "res://art/scenes/c2_crossroads.png",
+  "placeholder_color": "#c99a5b",
+  "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
+  "depth_scale": [740, 900, 0.85, 1.0],
+  "lili_start": [900, 820],
+  "entries": {"c1_sheriff": [900, 820], "c2_cabin": [260, 830], "c2_lookout": [1700, 830]},
+  "on_enter": [
+    {"once": "c2_intro_seen", "do": [{"cutscene": "intro"}]}
+  ],
+  "cutscenes": {
+    "intro": [
+      {"image": "res://art/cutscenes/c2_intro.png", "color": "#e9b872", "caption": "CUT_C2_INTRO_CAPTION"},
+      {"say": "CUT_C2_INTRO_1", "who": "narrator"},
+      {"say": "CUT_C2_INTRO_2", "who": "sheriff"},
+      {"image_clear": true}
+    ]
+  },
+  "hotspots": [
+    {
+      "id": "exit_cabin",
+      "name": "HS_EXIT_CABIN",
+      "polygon": [[0, 350], [200, 350], [200, 850], [0, 850]],
+      "walk_to": [140, 820],
+      "exit": "c2_cabin",
+      "exit_if": "signpost_up",
+      "blocked": "SAY_SIGNPOST_FIRST"
+    },
+    {
+      "id": "exit_lookout",
+      "name": "HS_EXIT_LOOKOUT",
+      "polygon": [[1720, 350], [1920, 350], [1920, 850], [1720, 850]],
+      "walk_to": [1780, 820],
+      "exit": "c2_lookout",
+      "exit_if": "has:county_map",
+      "blocked": "SAY_NEED_MAP"
+    },
+    {
+      "id": "signpost",
+      "name": "HS_SIGNPOST",
+      "polygon": [[940, 380], [1060, 380], [1060, 700], [940, 700]],
+      "walk_to": [1000, 780],
+      "interact": [
+        {"once": "signpost_up", "do": [
+          {"say": "SAY_SIGNPOST_HEAVY"},
+          {"say": "SAY_SIGNPOST_HELP", "who": "sheriff"},
+          {"say": "SAY_SIGNPOST_UP"}
+        ], "else": "SAY_SIGNPOST_DIRS"}
+      ]
+    },
+    {
+      "id": "tracks",
+      "name": "HS_TRACKS",
+      "polygon": [[350, 790], [640, 790], [640, 880], [350, 880]],
+      "walk_to": [700, 830],
+      "interact": "SAY_TRACKS_LOOK",
+      "use": {
+        "magnifier": [{"set": "tracks_checked"}, {"say": "SAY_TRACKS_LUPA"}]
+      }
+    },
+    {
+      "id": "grass",
+      "name": "HS_GRASS",
+      "polygon": [[1250, 790], [1560, 790], [1560, 880], [1250, 880]],
+      "walk_to": [1200, 830],
+      "interact": "SAY_GRASS_LOOK",
+      "use": {
+        "magnifier": [{"set": "hair_seen"}, {"say": "SAY_HAIR"}]
+      }
+    },
+    {
+      "id": "branch",
+      "name": "HS_BRANCH",
+      "if": "!took_branch",
+      "polygon": [[1480, 560], [1620, 560], [1620, 700], [1480, 700]],
+      "walk_to": [1550, 770],
+      "interact": [{"set": "took_branch"}, {"give": "dry_branch"}, {"say": "SAY_TAKE_BRANCH"}]
+    }
+  ],
+  "hints": [
+    {"id": "cross_signpost", "if": "!signpost_up", "keys": ["HINT_CROSS_SIGN_1", "HINT_CROSS_SIGN_2", "HINT_CROSS_SIGN_3"]},
+    {"id": "cross_tracks", "if": "!tracks_checked", "keys": ["HINT_CROSS_TRACKS_1", "HINT_CROSS_TRACKS_2", "HINT_CROSS_TRACKS_3"]},
+    {"id": "cross_cabin", "if": "!has:county_map", "keys": ["HINT_CROSS_CABIN_1", "HINT_CROSS_CABIN_2", "HINT_CROSS_CABIN_3"]},
+    {"id": "cross_lookout", "if": "has:county_map", "keys": ["HINT_CROSS_LOOKOUT_1", "HINT_CROSS_LOOKOUT_2", "HINT_CROSS_LOOKOUT_3"]}
+  ]
+}

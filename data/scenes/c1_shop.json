@@ -1,0 +1,63 @@
+{
+  "title": "SCENE_C1_SHOP",
+  "background": "res://art/scenes/c1_shop.png",
+  "placeholder_color": "#9c7a4e",
+  "walk_area": [[100, 740], [1820, 740], [1860, 900], [60, 900]],
+  "depth_scale": [740, 900, 0.85, 1.0],
+  "lili_start": [260, 830],
+  "entries": {"c1_street": [260, 830]},
+  "hotspots": [
+    {
+      "id": "exit_street",
+      "name": "HS_EXIT_STREET",
+      "polygon": [[0, 350], [180, 350], [180, 880], [0, 880]],
+      "walk_to": [220, 830],
+      "exit": "c1_street"
+    },
+    {
+      "id": "rosie",
+      "name": "HS_ROSIE",
+      "polygon": [[1100, 380], [1320, 380], [1320, 740], [1100, 740]],
+      "walk_to": [1200, 800],
+      "interact": [
+        {"if": "!rosie_free", "then": [{"say": "DLG_ROSIE_BUSY", "who": "rosie"}], "else": [
+          {"if": "rosie_testimony", "then": [{"say": "DLG_ROSIE_DONE", "who": "rosie"}], "else": [{"say": "DLG_ROSIE_FREE", "who": "rosie"}]}
+        ]}
+      ],
+      "use": {
+        "cash_key": [
+          {"take": "cash_key"},
+          {"set": "rosie_free"},
+          {"say": "DLG_ROSIE_KEY", "who": "rosie"}
+        ],
+        "footprint_copy": [
+          {"if": "!rosie_free", "then": [{"say": "DLG_ROSIE_BUSY", "who": "rosie"}], "else": [
+            {"once": "rosie_testimony", "do": [
+              {"say": "DLG_ROSIE_TESTIMONY", "who": "rosie"},
+              {"give": "blueberry_pie"},
+              {"say": "DLG_ROSIE_PIE", "who": "rosie"}
+            ], "else": [{"say": "DLG_ROSIE_DONE", "who": "rosie"}]}
+          ]}
+        ]
+      }
+    },
+    {
+      "id": "pickles",
+      "name": "HS_PICKLES",
+      "polygon": [[500, 520], [740, 520], [740, 740], [500, 740]],
+      "walk_to": [620, 800],
+      "interact": [
+        {"if": "got_cash_key", "then": "SAY_PICKLES_EMPTY", "else": "SAY_PICKLES_DEEP"}
+      ],
+      "use": {
+        "pitchfork": [
+          {"once": "got_cash_key", "do": [{"give": "cash_key"}, {"say": "SAY_PICKLES_FISH"}], "else": "SAY_PICKLES_EMPTY"}
+        ]
+      }
+    }
+  ],
+  "hints": [
+    {"id": "shop_key", "if": "!rosie_free", "keys": ["HINT_SHOP_KEY_1", "HINT_SHOP_KEY_2", "HINT_SHOP_KEY_3"]},
+    {"id": "shop_print", "if": "rosie_free & !rosie_testimony", "keys": ["HINT_SHOP_PRINT_1", "HINT_SHOP_PRINT_2", "HINT_SHOP_PRINT_3"]}
+  ]
+}

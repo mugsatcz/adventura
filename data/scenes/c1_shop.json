@@ -10,15 +10,15 @@
     {
       "id": "exit_street",
       "name": "HS_EXIT_STREET",
-      "polygon": [[0, 350], [180, 350], [180, 880], [0, 880]],
+      "polygon": [[90, 70], [270, 70], [270, 780], [90, 780]],
       "walk_to": [220, 830],
       "exit": "c1_street"
     },
     {
       "id": "rosie",
       "name": "HS_ROSIE",
-      "polygon": [[1100, 380], [1320, 380], [1320, 740], [1100, 740]],
-      "walk_to": [1200, 800],
+      "polygon": [[1330, 340], [1500, 340], [1500, 740], [1330, 740]],
+      "walk_to": [1420, 800],
       "interact": [
         {"if": "!rosie_free", "then": [{"say": "DLG_ROSIE_BUSY", "who": "rosie"}], "else": [
           {"if": "rosie_testimony", "then": [{"say": "DLG_ROSIE_DONE", "who": "rosie"}], "else": [{"say": "DLG_ROSIE_FREE", "who": "rosie"}]}
@@ -44,8 +44,8 @@
     {
       "id": "pickles",
       "name": "HS_PICKLES",
-      "polygon": [[500, 520], [740, 520], [740, 740], [500, 740]],
-      "walk_to": [620, 800],
+      "polygon": [[600, 590], [940, 590], [940, 770], [600, 770]],
+      "walk_to": [770, 820],
       "interact": [
         {"if": "got_cash_key", "then": "SAY_PICKLES_EMPTY", "else": "SAY_PICKLES_DEEP"}
       ],

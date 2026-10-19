@@ -82,7 +82,12 @@
     },
     {
       "id": "vi_river",
-      "if": "has:warm_pitch | canoe_fixed",
+      "if": "has:warm_pitch",
+      "keys": ["HINT_VI_RIVER_1", "HINT_VI_RIVER_2", "HINT_VI_RIVER_3"]
+    },
+    {
+      "id": "vi_river2",
+      "if": "canoe_fixed",
       "keys": ["HINT_VI_RIVER_1", "HINT_VI_RIVER_2", "HINT_VI_RIVER_3"]
     }
   ]

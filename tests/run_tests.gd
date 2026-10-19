@@ -23,6 +23,7 @@ func _init() -> void:
 		failures += _report("walkthrough " + file, WalkthroughRunner.run(data, steps))
 
 	failures += _report("walk area", _walk_area_errors())
+	failures += _report("race minigame", _race_errors())
 
 	print("\n%s" % ("ALL TESTS PASSED" if failures == 0 else "%d TEST GROUP(S) FAILED" % failures))
 	quit(1 if failures > 0 else 0)
@@ -53,3 +54,35 @@ func _walk_area_errors() -> Array:
 	if area.clamp_point(Vector2(300, 220)).distance_to(Vector2(300, 300)) > 1.0:
 		errs.append("clamp_point should snap to the nearest edge")
 	return errs
+
+
+## Plays the race headlessly: a bot that jumps in time must win the first attempt, and a player
+## who never taps must still get through by the third attempt.
+func _race_errors() -> Array:
+	var errs := []
+	var won := _play_race(true)
+	if won != 1:
+		errs.append("a jumping bot should win on attempt 1, finished on attempt %d" % won)
+	won = _play_race(false)
+	if won != 3:
+		errs.append("a player who never jumps should win on attempt 3, got %d" % won)
+	return errs
+
+
+func _play_race(jump: bool) -> int:
+	var game := RaceGame.new()
+	var done := [false]
+	game.finished.connect(func(): done[0] = true)
+	game._start_attempt()
+	var steps := 0
+	while not done[0] and steps < 60 * 400:
+		if jump and game._state == "run":
+			for f in game._fences:
+				var rel: float = float(f["x"]) - game._dist
+				if not f["hit"] and rel > 150.0 and rel < 200.0:
+					game._jump()
+		game._process(1.0 / 60.0)
+		steps += 1
+	var attempt: int = game._attempt if done[0] else -1
+	game.free()
+	return attempt

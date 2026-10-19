@@ -596,7 +596,8 @@ SAY_G_MAYOR_NO,"Starosta čeká. Hrom ještě nemá všechno: ohlávku, podkovu 
 SAY_R_TRACK,Dráha je připravená.
 HS_C6_RACE_TRACK,Závodní dráha
 CUT_C6_RACE_CAPTION,Závod o Zlatou podkovu
-CUT_C6_RACE_1,"Hrom vystřelil jako blesk. Lili se držela hřívy a cíl byl nakonec dřív, než stačila zavřít oči."
+CUT_C6_RACE_0,Na startu stál Hrom vedle Cylindrova koně. Ťukáním přeskakuj ohrady!
+CUT_C6_RACE_1,Hrom proletěl cílem o kousek před Cylindrovým koněm. Lili se držela hřívy a smála se.
 CUT_C6_RACE_2,"Vyhráli jste, Lili! Zlatá podkova je vaše."
 CUT_C6_RACE_3,"Za tu farmu už se nebojím. Omlouvám se, Lili. Chtěl jsem jen vyhrát."
 HINT_RA_GO_1,Závod už začal.
@@ -613,3 +614,7 @@ HINT_HO_BLANKET_1,Hrom si zaslouží odměnu.
 HINT_HO_BLANKET_2,Máš novou deku.
 HINT_HO_BLANKET_3,Přetáhni novou deku na Hroma.
 SCENE_C7_HOME,Domů na farmu
+UI_RACE_TAP,Ťukni a Hrom skočí!
+UI_RACE_GO,Hurá!
+UI_RACE_WIN,Vyhráli jsme!
+UI_RACE_LOSE,Cylindrův kůň byl rychlejší. Zkusíme to znovu!

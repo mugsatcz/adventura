@@ -172,6 +172,12 @@ func _tap(pos: Vector2) -> void:
 	if busy:
 		return
 	var hs := room.hotspot_at(pos)
+	var item := ui.selected_item()
+	if item != "":
+		ui.select_item("")
+		if not hs.is_empty():
+			await _use_on(item, hs)
+		return
 	if hs.is_empty():
 		room.lili.walk_to(room.walk.find_path(room.lili.position, pos))
 		return
@@ -184,9 +190,14 @@ func _tap(pos: Vector2) -> void:
 func _on_item_dropped(item: String, pos: Vector2) -> void:
 	if busy or room == null:
 		return
+	ui.select_item("")
 	var hs := room.hotspot_at(pos)
 	if hs.is_empty():
 		return
+	await _use_on(item, hs)
+
+
+func _use_on(item: String, hs: Dictionary) -> void:
 	busy = true
 	if await _walk_to_hotspot(hs):
 		await play(rules.use_item(item, hs["id"])["events"])
@@ -196,16 +207,29 @@ func _on_item_dropped(item: String, pos: Vector2) -> void:
 func _on_items_combined(a: String, b: String) -> void:
 	if busy:
 		return
+	ui.select_item("")
 	busy = true
 	await play(rules.combine(a, b)["events"])
 	busy = false
 
 
+## First tap picks the item, then a tap on the scene uses it and a tap on another item combines
+## them. Tapping the picked item again makes Lili describe it.
 func _on_item_tapped(item: String) -> void:
 	if busy:
 		return
+	var picked := ui.selected_item()
+	if picked == "":
+		ui.select_item(item)
+		var def: Dictionary = Game.data.items.get(item, {})
+		ui.toast(tr("UI_SELECTED") % tr(String(def.get("name", item))))
+		return
+	ui.select_item("")
 	busy = true
-	await play(rules.look_item(item))
+	if picked == item:
+		await play(rules.look_item(item))
+	else:
+		await play(rules.combine(picked, item)["events"])
 	busy = false
 
 

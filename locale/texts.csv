@@ -618,3 +618,4 @@ UI_RACE_TAP,Ťukni a Hrom skočí!
 UI_RACE_GO,Hurá!
 UI_RACE_WIN,Vyhráli jsme!
 UI_RACE_LOSE,Cylindrův kůň byl rychlejší. Zkusíme to znovu!
+UI_SELECTED,Vybráno: %s. Ťukni na místo, kde ho použít.

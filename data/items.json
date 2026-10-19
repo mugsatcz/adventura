@@ -10,7 +10,13 @@
     "bucket_water": {"name": "ITEM_BUCKET_WATER", "look": "LOOK_BUCKET_WATER", "color": "#4f86b0", "icon": "res://art/items/bucket_water.png"},
     "charcoal": {"name": "ITEM_CHARCOAL", "look": "LOOK_CHARCOAL", "color": "#3a3632", "icon": "res://art/items/charcoal.png"},
     "newspaper_charcoal": {"name": "ITEM_NEWSPAPER_CHARCOAL", "look": "LOOK_NEWSPAPER_CHARCOAL", "color": "#9c9484", "icon": "res://art/items/newspaper_charcoal.png"},
-    "footprint_copy": {"name": "ITEM_FOOTPRINT", "look": "LOOK_FOOTPRINT", "color": "#bfae8a", "icon": "res://art/items/footprint_copy.png"}
+    "footprint_copy": {"name": "ITEM_FOOTPRINT", "look": "LOOK_FOOTPRINT", "color": "#bfae8a", "icon": "res://art/items/footprint_copy.png"},
+    "cash_key": {"name": "ITEM_CASH_KEY", "look": "LOOK_CASH_KEY", "color": "#c9a24a", "icon": "res://art/items/cash_key.png"},
+    "blueberry_pie": {"name": "ITEM_PIE", "look": "LOOK_PIE", "color": "#5a4a8f", "icon": "res://art/items/blueberry_pie.png"},
+    "magnifier": {"name": "ITEM_MAGNIFIER", "look": "LOOK_MAGNIFIER", "color": "#b9c4cc", "icon": "res://art/items/magnifier.png"},
+    "dry_branch": {"name": "ITEM_BRANCH", "look": "LOOK_BRANCH", "color": "#8a6a3e", "icon": "res://art/items/dry_branch.png"},
+    "timetable_note": {"name": "ITEM_NOTE", "look": "LOOK_NOTE", "color": "#d8c9a0", "icon": "res://art/items/timetable_note.png"},
+    "county_map": {"name": "ITEM_MAP", "look": "LOOK_MAP", "color": "#c8b27a", "icon": "res://art/items/county_map.png"}
   },
   "combos": [
     {

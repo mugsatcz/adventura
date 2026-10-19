@@ -1,0 +1,78 @@
+{
+  "title": "SCENE_C1_SHERIFF",
+  "background": "res://art/scenes/c1_sheriff.png",
+  "placeholder_color": "#8a6a45",
+  "walk_area": [[160, 720], [1760, 720], [1840, 900], [80, 900]],
+  "depth_scale": [720, 900, 0.85, 1.0],
+  "lili_start": [900, 820],
+  "entries": {"c1_street": [260, 830]},
+  "hotspots": [
+    {
+      "id": "exit_street",
+      "name": "HS_EXIT_STREET",
+      "polygon": [[0, 300], [170, 300], [170, 880], [0, 880]],
+      "walk_to": [220, 830],
+      "exit": "c1_street"
+    },
+    {
+      "id": "tom",
+      "name": "HS_TOM",
+      "polygon": [[1050, 400], [1250, 400], [1250, 740], [1050, 740]],
+      "walk_to": [1000, 800],
+      "interact": [{"dialogue": "tom"}],
+      "use": {
+        "silver_horseshoe": [
+          {"set": "tom_saw_shoe"},
+          {"say": "SAY_TOM_SHOE", "who": "sheriff"},
+          {"if": "tom_saw_shoe & tom_saw_print & rosie_testimony & !sheriff_doubts", "then": [
+            {"set": "sheriff_doubts"},
+            {"say": "SAY_TOM_DOUBT", "who": "sheriff"}
+          ]}
+        ],
+        "footprint_copy": [
+          {"set": "tom_saw_print"},
+          {"say": "SAY_TOM_PRINT", "who": "sheriff"},
+          {"if": "tom_saw_shoe & tom_saw_print & rosie_testimony & !sheriff_doubts", "then": [
+            {"set": "sheriff_doubts"},
+            {"say": "SAY_TOM_DOUBT", "who": "sheriff"}
+          ]}
+        ],
+        "blueberry_pie": [
+          {"if": "sheriff_doubts", "then": [
+            {"take": "blueberry_pie"},
+            {"say": "SAY_TOM_PIE", "who": "sheriff"},
+            {"give": "magnifier"},
+            {"say": "SAY_TOM_GO", "who": "sheriff"},
+            {"goto": "c2_crossroads"}
+          ], "else": [
+            {"say": "SAY_TOM_PIE_LATER", "who": "sheriff"}
+          ]}
+        ]
+      }
+    }
+  ],
+  "dialogues": {
+    "tom": {
+      "start": "hi",
+      "nodes": {
+        "hi": {
+          "who": "sheriff",
+          "text": "DLG_TOM_HI",
+          "options": [
+            {"text": "DLG_TOM_OPT_LOST", "if": "!tom_told", "next": "lost"},
+            {"text": "DLG_TOM_OPT_TASK", "if": "tom_told", "next": "task"},
+            {"text": "DLG_TOM_OPT_BYE", "next": "bye"}
+          ]
+        },
+        "lost": {"who": "sheriff", "text": "DLG_TOM_LOST", "do": [{"set": "tom_told"}], "next": "hi"},
+        "task": {"who": "sheriff", "text": "DLG_TOM_TASK", "next": "hi"},
+        "bye": {"who": "sheriff", "text": "DLG_TOM_BYE"}
+      }
+    }
+  },
+  "hints": [
+    {"id": "tom_talk", "if": "!tom_told", "keys": ["HINT_TOM_TALK_1", "HINT_TOM_TALK_2", "HINT_TOM_TALK_3"]},
+    {"id": "tom_proof", "if": "!sheriff_doubts", "keys": ["HINT_TOM_PROOF_1", "HINT_TOM_PROOF_2", "HINT_TOM_PROOF_3"]},
+    {"id": "tom_pie", "if": "sheriff_doubts", "keys": ["HINT_TOM_PIE_1", "HINT_TOM_PIE_2", "HINT_TOM_PIE_3"]}
+  ]
+}

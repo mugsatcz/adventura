@@ -1,0 +1,92 @@
+{
+  "title": "SCENE_C2_LOOKOUT",
+  "background": "res://art/scenes/c2_lookout.png",
+  "placeholder_color": "#8fb07a",
+  "walk_area": [[100, 740], [1820, 740], [1860, 900], [60, 900]],
+  "depth_scale": [740, 900, 0.85, 1.0],
+  "lili_start": [300, 830],
+  "entries": {"c2_crossroads": [300, 830]},
+  "cutscenes": {
+    "end_slice": [
+      {"say": "SAY_C2_END_1", "who": "sheriff"},
+      {"say": "SAY_C2_END_2", "who": "lili"},
+      {"image": "res://art/cutscenes/end_slice.png", "color": "#f3b562", "caption": "CUT_END_CAPTION"},
+      {"wait": 4.0},
+      {"image_clear": true},
+      {"say": "SAY_END_DEMO", "who": "narrator"}
+    ]
+  },
+  "hotspots": [
+    {
+      "id": "exit_crossroads",
+      "name": "HS_EXIT_CROSSROADS",
+      "polygon": [[0, 350], [180, 350], [180, 880], [0, 880]],
+      "walk_to": [220, 830],
+      "exit": "c2_crossroads"
+    },
+    {
+      "id": "view",
+      "name": "HS_VIEW",
+      "polygon": [[500, 200], [1500, 200], [1500, 500], [500, 500]],
+      "walk_to": [900, 780],
+      "interact": "SAY_VIEW_LOOK",
+      "use": {
+        "county_map": [
+          {"once": "trail_false", "do": [
+            {"say": "SAY_MAP_1"},
+            {"say": "SAY_MAP_2"},
+            {"if": "horse_watered & !c2_done", "then": [{"set": "c2_done"}, {"cutscene": "end_slice"}]}
+          ], "else": "SAY_MAP_AGAIN"}
+        ]
+      }
+    },
+    {
+      "id": "bush",
+      "name": "HS_BUSH",
+      "if": "!spring_open",
+      "polygon": [[1450, 540], [1700, 540], [1700, 740], [1450, 740]],
+      "walk_to": [1500, 800],
+      "interact": "SAY_BUSH_THORNS",
+      "use": {
+        "dry_branch": [{"set": "spring_open"}, {"say": "SAY_BUSH_OPEN"}]
+      }
+    },
+    {
+      "id": "spring",
+      "name": "HS_SPRING",
+      "if": "spring_open",
+      "polygon": [[1450, 600], [1650, 600], [1650, 740], [1450, 740]],
+      "walk_to": [1500, 800],
+      "interact": "SAY_SPRING",
+      "use": {
+        "bucket": [{"take": "bucket"}, {"give": "bucket_water"}, {"say": "SAY_SPRING_FILL"}],
+        "bucket_water": "SAY_BUCKET_FULL"
+      }
+    },
+    {
+      "id": "horse",
+      "name": "HS_BUBAK",
+      "polygon": [[900, 520], [1180, 520], [1180, 740], [900, 740]],
+      "walk_to": [1000, 800],
+      "interact": [
+        {"if": "horse_watered", "then": "SAY_HORSE_OK", "else": "SAY_HORSE_THIRSTY"}
+      ],
+      "use": {
+        "bucket_water": [
+          {"if": "horse_watered", "then": "SAY_HORSE_OK", "else": [
+            {"take": "bucket_water"},
+            {"give": "bucket"},
+            {"set": "horse_watered"},
+            {"say": "SAY_HORSE_DRINK"},
+            {"if": "trail_false & !c2_done", "then": [{"set": "c2_done"}, {"cutscene": "end_slice"}]}
+          ]}
+        ]
+      }
+    }
+  ],
+  "hints": [
+    {"id": "look_map", "if": "!trail_false", "keys": ["HINT_LOOK_MAP_1", "HINT_LOOK_MAP_2", "HINT_LOOK_MAP_3"]},
+    {"id": "look_bush", "if": "!spring_open", "keys": ["HINT_LOOK_BUSH_1", "HINT_LOOK_BUSH_2", "HINT_LOOK_BUSH_3"]},
+    {"id": "look_water", "if": "!horse_watered", "keys": ["HINT_LOOK_WATER_1", "HINT_LOOK_WATER_2", "HINT_LOOK_WATER_3"]}
+  ]
+}

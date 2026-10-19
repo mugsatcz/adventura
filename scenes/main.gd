@@ -35,6 +35,9 @@ func _ready() -> void:
 		choice = await ui.title_screen(Game.has_save())
 	if choice != "continue" or not Game.load_game():
 		Game.new_game()
+	for arg in OS.get_cmdline_user_args():
+		if smoke and arg.begins_with("--scene=") and Game.data.scenes.has(arg.substr(8)):
+			Game.state.scene_id = arg.substr(8)
 	rules = Rules.new(Game.data, Game.state)
 	await _enter_room(Game.state.scene_id)
 	if smoke:

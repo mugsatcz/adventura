@@ -1,5 +1,5 @@
 {
   "start_scene": "c1_stable",
   "start_items": ["carrot"],
-  "scenes": ["c1_stable", "c1_yard"]
+  "scenes": ["c1_stable", "c1_yard", "c1_street", "c1_sheriff", "c1_shop", "c2_crossroads", "c2_cabin", "c2_lookout"]
 }

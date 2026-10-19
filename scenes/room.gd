@@ -95,4 +95,6 @@ func _draw() -> void:
 		var outline := p.duplicate()
 		outline.append(p[0])
 		draw_polyline(outline, Color(1, 0.9, 0.5, 0.9 if _highlight else 0.35), 3.0)
-		draw_string(_font, centroid(hs) + Vector2(-200, 10), tr(String(hs.get("name", ""))), HORIZONTAL_ALIGNMENT_CENTER, 400, 30, Color.WHITE)
+		var c := centroid(hs)
+		var x := clampf(c.x - 200.0, 8.0, SIZE.x - 408.0)
+		draw_string(_font, Vector2(x, c.y + 10.0), tr(String(hs.get("name", ""))), HORIZONTAL_ALIGNMENT_CENTER, 400, 30, Color.WHITE)

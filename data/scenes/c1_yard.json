@@ -5,7 +5,7 @@
   "walk_area": [[60, 730], [1860, 730], [1880, 900], [40, 900]],
   "depth_scale": [730, 900, 0.85, 1.0],
   "lili_start": [1650, 820],
-  "entries": {"c1_stable": [1650, 820]},
+  "entries": {"c1_stable": [1650, 820], "c1_street": [200, 820]},
   "hotspots": [
     {
       "id": "exit_stable",
@@ -19,7 +19,9 @@
       "name": "HS_EXIT_TOWN",
       "polygon": [[0, 350], [200, 350], [200, 850], [0, 850]],
       "walk_to": [140, 820],
-      "interact": "SAY_TOWN_LATER"
+      "exit": "c1_street",
+      "exit_if": "has:footprint_copy",
+      "blocked": "SAY_TOWN_LATER"
     },
     {
       "id": "grandpa",
@@ -98,6 +100,7 @@
   "hints": [
     {"id": "joe", "if": "!joe_told", "keys": ["HINT_JOE_1", "HINT_JOE_2", "HINT_JOE_3"]},
     {"id": "coal", "if": "!has:charcoal & !has:newspaper_charcoal & !has:footprint_copy", "keys": ["HINT_COAL_1", "HINT_COAL_2", "HINT_COAL_3"]},
-    {"id": "combine", "if": "has:charcoal & has:newspaper", "keys": ["HINT_COMBINE_1", "HINT_COMBINE_2", "HINT_COMBINE_3"]}
+    {"id": "combine", "if": "has:charcoal & has:newspaper", "keys": ["HINT_COMBINE_1", "HINT_COMBINE_2", "HINT_COMBINE_3"]},
+    {"id": "yard_town", "if": "has:footprint_copy", "keys": ["HINT_YARD_TOWN_1", "HINT_YARD_TOWN_2", "HINT_YARD_TOWN_3"]}
   ]
 }

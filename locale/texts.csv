@@ -99,3 +99,167 @@ HINT_COAL_3,Naplň vědro ve studni a vylij ho na ohniště.
 HINT_COMBINE_1,Máš papír i uhlík. Co kdybys je spojila?
 HINT_COMBINE_2,Přetáhni v inventáři uhlík na noviny.
 HINT_COMBINE_3,Pak jdi do stáje a použij je na otisky bot.
+CHAR_ROSIE,Paní Rosie
+ITEM_CASH_KEY,Klíček od pokladny
+LOOK_CASH_KEY,Malý mosazný klíček. Voní po okurkách.
+ITEM_PIE,Borůvkový koláč
+LOOK_PIE,Voňavý borůvkový koláč. Za ten by šerif Tom udělal cokoli.
+ITEM_MAGNIFIER,Lupa
+LOOK_MAGNIFIER,Šerifova lupa. Všechno přes ni vypadá větší.
+ITEM_BRANCH,Suchá větev
+LOOK_BRANCH,Dlouhá suchá větev. Na odhrnutí trní se bude hodit.
+ITEM_NOTE,Cedulka
+LOOK_NOTE,"Na jedné straně vzkaz, na druhé jízdní řád. Vlak do Red Buffala jede v 10:15."
+ITEM_MAP,Mapa kraje
+LOOK_MAP,Mapa kraje. Železnice vede úplně jiným směrem než Černý pahorek.
+HINT_YARD_TOWN_1,"Máš obtisk boty. Teď potřebuješ zjistit, kdo takové boty nosí."
+HINT_YARD_TOWN_2,Boty se prodávají ve městě. Zajdi tam.
+HINT_YARD_TOWN_3,Městská cesta vede vlevo od dvora.
+SCENE_C1_STREET,Hlavní ulice
+HS_EXIT_RANCH,Na ranč
+HS_SHERIFF_OFFICE,Šerifova kancelář
+HS_SHOP,Obchod paní Rosie
+HS_POSTER,Plakát
+SAY_POSTER_1,Hledaní Prairie Bandité. Na obrázku mají staré děravé boty.
+SAY_POSTER_2,Moje otisky jsou ale od nových bot s hvězdičkou. To nesedí.
+SAY_POSTER_AGAIN,Staré děravé boty. A moje stopy jsou od nových.
+HINT_STREET_1,Obtisk boty by mohl někomu připomenout zákazníka.
+HINT_STREET_2,Boty se prodávají v obchodě paní Rosie.
+HINT_STREET_3,Ťukni na obchod vpravo.
+HINT_STREET_TOM_1,"Máš všechno, co šerif potřebuje k přesvědčení."
+HINT_STREET_TOM_2,Zajdi za šerifem Tomem.
+HINT_STREET_TOM_3,Ťukni na šerifovu kancelář uprostřed ulice.
+SCENE_C1_SHERIFF,Šerifova kancelář
+HS_EXIT_STREET,Na ulici
+HS_TOM,Šerif Tom
+DLG_TOM_HI,"Ahoj, Lili. Máš nějaké stopy po Hromovi?"
+DLG_TOM_OPT_LOST,"Šerife, Hrom zmizel ze stáje!"
+DLG_TOM_LOST,"Já vím, holčičko. Prairie Bandité, jak se zdá. Jenže něco tu nehraje. Přines mi důkazy, že to nebyli oni."
+DLG_TOM_OPT_TASK,Co mám udělat?
+DLG_TOM_TASK,"Najdi stopy a svědka. A všechno, co máš, mi ukaž. Stačí to přetáhnout na mě."
+DLG_TOM_OPT_BYE,"Zatím nic, Tome."
+DLG_TOM_BYE,Hledej dál. Já tu budu.
+SAY_TOM_SHOE,Stříbrná podkova? Prairie Bandité na stříbro nemají. Zajímavé.
+SAY_TOM_PRINT,Nové boty s hvězdičkou. Bandité chodí ve starých. Hm.
+SAY_TOM_DOUBT,"Dobře, Lili. Stříbro, nové boty a svědkyně z obchodu. To nebyli Prairie Bandité. Někdo nás chce poplést."
+SAY_TOM_PIE_LATER,"Koláč? Ten si rád vezmu, ale nejdřív mi dokaž, že to nebyli bandité."
+SAY_TOM_PIE,"Borůvkový koláč! Tak jo, Lili, vyrážíme po stopách. Půjčím ti i svou lupu."
+SAY_TOM_GO,"Nasedej, jedeme!"
+HINT_TOM_TALK_1,Šerif ti určitě rád poradí.
+HINT_TOM_TALK_2,"Řekni šerifovi, co se stalo."
+HINT_TOM_TALK_3,"Ťukni na šerifa a vyber: Šerife, Hrom zmizel ze stáje!"
+HINT_TOM_PROOF_1,"Šerif chce důkazy, že to nebyli bandité."
+HINT_TOM_PROOF_2,"Ukaž mu, co sis donesla: stříbrnou podkovu a obtisk boty. Svědka už máš."
+HINT_TOM_PROOF_3,Přetáhni na šerifa stříbrnou podkovu a potom obtisk boty.
+HINT_TOM_PIE_1,Šerif Tom má slabost pro sladké.
+HINT_TOM_PIE_2,Od Rosie máš borůvkový koláč.
+HINT_TOM_PIE_3,Přetáhni koláč na šerifa.
+SCENE_C1_SHOP,Obchod paní Rosie
+HS_ROSIE,Paní Rosie
+HS_PICKLES,Sud s okurkami
+DLG_ROSIE_BUSY,"Ach, Lili, promiň, nemám čas. Klíček od pokladny mi spadl do sudu s okurkami a bez něj ji neotevřu."
+DLG_ROSIE_FREE,"Teď jsem tu jen pro tebe, Lili. S čím můžu pomoct?"
+DLG_ROSIE_KEY,Můj klíček! Ty jsi zlatíčko. Teď mám čas na cokoli.
+DLG_ROSIE_TESTIMONY,"Ten otisk? Takové boty jsem včera prodala třem pánům v čistých kabátech. Žádní bandité, ti by neplatili."
+DLG_ROSIE_PIE,A vezmi tenhle borůvkový koláč pro šerifa. Ať má sílu na pátrání.
+DLG_ROSIE_DONE,"Víc už nevím, Lili. Dones šerifovi ten koláč."
+SAY_PICKLES_DEEP,Na dně sudu se leskne klíček. Rukou nedosáhnu.
+SAY_PICKLES_FISH,Vidlemi jsem klíček vylovila. Je trochu kyselý.
+SAY_PICKLES_EMPTY,V sudu jsou už jen okurky.
+HINT_SHOP_KEY_1,Rosie má nějaký problém.
+HINT_SHOP_KEY_2,Klíček od pokladny spadl do sudu s okurkami. Rukou ho nevylovíš.
+HINT_SHOP_KEY_3,Přetáhni vidle na sud s okurkami a klíček pak dej Rosie.
+HINT_SHOP_PRINT_1,"Rosie vidí do ulice a ví, kdo co kupuje."
+HINT_SHOP_PRINT_2,Ukaž Rosie obtisk boty.
+HINT_SHOP_PRINT_3,Přetáhni obtisk boty na Rosie.
+SCENE_C2_CROSSROADS,Rozcestí
+HS_SIGNPOST,Rozcestník
+HS_TRACKS,Stopy u chaty
+HS_GRASS,Pošlapaná tráva
+HS_BRANCH,Suchá větev
+HS_EXIT_CABIN,K chatě
+HS_EXIT_LOOKOUT,Na vyhlídku
+CUT_C2_INTRO_CAPTION,Rozcestí za městem
+CUT_C2_INTRO_1,Šerif Tom a Lili sledovali stopy až za město. Slunce pálilo a prérie byla tichá.
+CUT_C2_INTRO_2,"Tady se stopy dělí, Lili. A někdo povalil rozcestník."
+SAY_SIGNPOST_HEAVY,"Je moc těžký, sama ho nezvednu."
+SAY_SIGNPOST_HELP,"Počkej, pomůžu ti. A hop!"
+SAY_SIGNPOST_UP,"Rozcestník ukazuje na chatu, na Černý pahorek a na železnici."
+SAY_SIGNPOST_DIRS,"Chata, Černý pahorek, železnice. Kudy asi vedou zlodějovy stopy?"
+SAY_SIGNPOST_FIRST,"Nejdřív musíme zvednout rozcestník, ať vím, kam jít."
+SAY_NEED_MAP,"Bez mapy bych nevěděla, kudy na vyhlídku. Zkusím nejdřív chatu."
+SAY_TRACKS_LOOK,Stopy k chatě. Zblízka bych je viděla líp.
+SAY_TRACKS_LUPA,"Jen otisky bot, žádná kopyta! Hrom tudy nešel."
+SAY_GRASS_LOOK,Pošlapaná tráva vede k železnici.
+SAY_HAIR,Černý chlup z Hromovy hřívy! Hrom šel k železnici.
+SAY_TAKE_BRANCH,Suchá větev. Ta se hodí.
+HINT_CROSS_SIGN_1,Na zemi něco leží.
+HINT_CROSS_SIGN_2,"Rozcestník je těžký, ale nejsi tu sama."
+HINT_CROSS_SIGN_3,"Ťukni na rozcestník, šerif Tom ti pomůže."
+HINT_CROSS_TRACKS_1,Stopy je lepší prohlédnout zblízka.
+HINT_CROSS_TRACKS_2,Šerif ti půjčil lupu.
+HINT_CROSS_TRACKS_3,Přetáhni lupu na stopy vlevo dole.
+HINT_CROSS_CABIN_1,Cedulka mluvila o chatě.
+HINT_CROSS_CABIN_2,Chata je vlevo. Možná tam najdeš odpovědi.
+HINT_CROSS_CABIN_3,Ťukni vlevo na cestu k chatě.
+HINT_CROSS_LOOKOUT_1,"S mapou už víš, kam jít."
+HINT_CROSS_LOOKOUT_2,Z vyhlídky uvidíš celý kraj.
+HINT_CROSS_LOOKOUT_3,Ťukni vpravo na cestu na vyhlídku.
+SCENE_C2_CABIN,Opuštěná chata
+HS_BARREL,Starý sud
+HS_WINDOW,Okno
+HS_DOOR,Dveře
+HS_HAT,Starý klobouk
+HS_NOTE,Cedulka
+HS_CHEST,Truhla s číselným zámkem
+HS_EXIT_CROSSROADS,Zpět na rozcestí
+SAY_BARREL_MOVE,Přistrčila jsem sud pod okno.
+SAY_WINDOW_HIGH,Okno je moc vysoko. Něco bych si měla podstavit.
+SAY_WINDOW_IN,Vyšplhala jsem se dovnitř.
+SAY_DOOR_LOCKED,Dveře jsou zamčené zevnitř.
+SAY_HAT_1,Starý klobouk. Uvnitř je štítek: Divadlo Red Buffalo.
+SAY_HAT_2,Bandité s divadelními kostýmy? Tohle bude past.
+SAY_HAT_AGAIN,Divadlo Red Buffalo. Zajímavé.
+SAY_NOTE_1,Hledejte nás na Černém pahorku. Na rubu je ale jízdní řád.
+SAY_NOTE_2,"Vlak do Red Buffala jede v 10:15. Tohle není vzkaz, ale falešná stopa!"
+SAY_CHEST_LOCK,Truhla má čtyřmístný číselný zámek. Kód musí být někde poblíž.
+SAY_CHEST_OPEN,"Deset patnáct, tedy 1015! Zámek cvakl. Uvnitř je mapa kraje."
+HINT_CABIN_ENTER_1,"Dveře jsou zamčené, ale okno vypadá otevřené."
+HINT_CABIN_ENTER_2,Okno je moc vysoko. Něco by se hodilo.
+HINT_CABIN_ENTER_3,Přistrč sud pod okno a pak ťukni na okno.
+HINT_CABIN_CHEST_1,Truhla má číselný zámek.
+HINT_CABIN_CHEST_2,Kód musí být někde v chatě.
+HINT_CABIN_CHEST_3,Vezmi cedulku ze stěny a přetáhni ji na truhlu.
+HINT_CABIN_LEAVE_1,Mapu už máš.
+HINT_CABIN_LEAVE_2,Vrať se na rozcestí.
+HINT_CABIN_LEAVE_3,Ťukni vlevo na cestu na rozcestí.
+SCENE_C2_LOOKOUT,Vyhlídka
+HS_VIEW,Výhled na kraj
+HS_BUSH,Trnitý keř
+HS_SPRING,Pramen
+HS_BUBAK,Bubák
+SAY_VIEW_LOOK,Z vyhlídky je vidět celý kraj. Hrom ale ne.
+SAY_MAP_1,Černý pahorek je na mapě na opačné straně než železnice.
+SAY_MAP_2,Falešná stopa! Zloději nás chtěli poslat pryč. Hrom je u železnice.
+SAY_MAP_AGAIN,Černý pahorek je úplně mimo. Hrom je u železnice.
+SAY_BUSH_THORNS,Za trnitým keřem něco zurčí. Ruce si ale nepíchnu.
+SAY_BUSH_OPEN,Suchou větví jsem keř odhrnula. Pod ním je pramen!
+SAY_SPRING,Čistý horský pramen.
+SAY_SPRING_FILL,Vědro je plné ledové vody.
+SAY_BUCKET_FULL,Vědro už je plné.
+SAY_HORSE_THIRSTY,Šerifův kůň Bubák je celý zaprášený a má žízeň.
+SAY_HORSE_OK,Bubák se napil a je spokojený.
+SAY_HORSE_DRINK,Bubák vypil celé vědro. Je připravený k cestě.
+SAY_C2_END_1,"Bubák je napojený a víme, kudy dál. Jedeme na nádraží!"
+SAY_C2_END_2,"Hrom je ve vlaku, cítím to!"
+CUT_END_CAPTION,Konec ukázky. Pokračování příště.
+SAY_END_DEMO,Hotové jsou kapitoly 1 a 2. Další kapitoly se připravují.
+HINT_LOOK_MAP_1,Z vyhlídky se dá porovnat krajina s mapou.
+HINT_LOOK_MAP_2,"Mapa z truhly ukáže, jestli je stopa pravá."
+HINT_LOOK_MAP_3,Přetáhni mapu na výhled na kraj.
+HINT_LOOK_BUSH_1,Za trnitým keřem se něco třpytí.
+HINT_LOOK_BUSH_2,Keř je plný trní. Hodil by se dlouhý předmět.
+HINT_LOOK_BUSH_3,Přetáhni suchou větev na keř.
+HINT_LOOK_WATER_1,Bubák je celý zaprášený a má žízeň.
+HINT_LOOK_WATER_2,Potřebuješ vodu z pramene a vědro.
+HINT_LOOK_WATER_3,Přetáhni vědro na pramen a pak plné vědro na Bubáka.

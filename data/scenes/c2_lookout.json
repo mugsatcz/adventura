@@ -17,14 +17,14 @@
     {
       "id": "exit_crossroads",
       "name": "HS_EXIT_CROSSROADS",
-      "polygon": [[0, 350], [180, 350], [180, 880], [0, 880]],
+      "polygon": [[0, 430], [260, 430], [260, 780], [0, 780]],
       "walk_to": [220, 830],
       "exit": "c2_crossroads"
     },
     {
       "id": "view",
       "name": "HS_VIEW",
-      "polygon": [[500, 200], [1500, 200], [1500, 500], [500, 500]],
+      "polygon": [[300, 230], [1550, 230], [1550, 490], [300, 490]],
       "walk_to": [900, 780],
       "interact": "SAY_VIEW_LOOK",
       "use": {
@@ -41,8 +41,8 @@
       "id": "bush",
       "name": "HS_BUSH",
       "if": "!spring_open",
-      "polygon": [[1450, 540], [1700, 540], [1700, 740], [1450, 740]],
-      "walk_to": [1500, 800],
+      "polygon": [[1450, 600], [1830, 600], [1830, 790], [1450, 790]],
+      "walk_to": [1600, 830],
       "interact": "SAY_BUSH_THORNS",
       "use": {
         "dry_branch": [{"set": "spring_open"}, {"say": "SAY_BUSH_OPEN"}]
@@ -52,8 +52,8 @@
       "id": "spring",
       "name": "HS_SPRING",
       "if": "spring_open",
-      "polygon": [[1450, 600], [1650, 600], [1650, 740], [1450, 740]],
-      "walk_to": [1500, 800],
+      "polygon": [[1450, 600], [1830, 600], [1830, 790], [1450, 790]],
+      "walk_to": [1600, 830],
       "interact": "SAY_SPRING",
       "use": {
         "bucket": [{"take": "bucket"}, {"give": "bucket_water"}, {"say": "SAY_SPRING_FILL"}],
@@ -63,8 +63,8 @@
     {
       "id": "horse",
       "name": "HS_BUBAK",
-      "polygon": [[900, 520], [1180, 520], [1180, 740], [900, 740]],
-      "walk_to": [1000, 800],
+      "polygon": [[670, 480], [930, 480], [930, 740], [670, 740]],
+      "walk_to": [800, 810],
       "interact": [
         {"if": "horse_watered", "then": "SAY_HORSE_OK", "else": "SAY_HORSE_THIRSTY"}
       ],

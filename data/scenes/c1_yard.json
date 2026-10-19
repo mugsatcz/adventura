@@ -10,14 +10,14 @@
     {
       "id": "exit_stable",
       "name": "HS_EXIT_STABLE",
-      "polygon": [[1640, 300], [1900, 300], [1900, 850], [1640, 850]],
+      "polygon": [[1650, 150], [1920, 150], [1920, 880], [1650, 880]],
       "walk_to": [1780, 820],
       "exit": "c1_stable"
     },
     {
       "id": "exit_town",
       "name": "HS_EXIT_TOWN",
-      "polygon": [[0, 350], [200, 350], [200, 850], [0, 850]],
+      "polygon": [[0, 600], [330, 600], [330, 900], [0, 900]],
       "walk_to": [140, 820],
       "exit": "c1_street",
       "exit_if": "has:footprint_copy",
@@ -26,14 +26,14 @@
     {
       "id": "grandpa",
       "name": "HS_JOE",
-      "polygon": [[1290, 430], [1450, 430], [1450, 620], [1290, 620]],
-      "walk_to": [1250, 790],
+      "polygon": [[1225, 410], [1630, 410], [1630, 850], [1225, 850]],
+      "walk_to": [1190, 880],
       "interact": [{"dialogue": "joe"}]
     },
     {
       "id": "well",
       "name": "HS_WELL",
-      "polygon": [[70, 300], [455, 300], [455, 700], [70, 700]],
+      "polygon": [[70, 285], [500, 285], [500, 700], [70, 700]],
       "walk_to": [420, 770],
       "interact": "LOOK_WELL",
       "use": {
@@ -45,15 +45,15 @@
       "id": "bucket",
       "name": "HS_BUCKET",
       "if": "!took_bucket",
-      "polygon": [[240, 490], [335, 490], [335, 560], [240, 560]],
-      "walk_to": [330, 770],
+      "polygon": [[447, 670], [625, 670], [625, 800], [447, 800]],
+      "walk_to": [540, 840],
       "interact": [{"set": "took_bucket"}, {"give": "bucket"}, {"say": "SAY_TAKE_BUCKET"}]
     },
     {
       "id": "fire",
       "name": "HS_FIRE",
-      "polygon": [[820, 590], [1190, 590], [1190, 790], [820, 790]],
-      "walk_to": [930, 790],
+      "polygon": [[650, 600], [1150, 600], [1150, 860], [650, 860]],
+      "walk_to": [900, 890],
       "interact": [
         {"if": "!fire_out", "then": "SAY_FIRE_HOT", "else": [
           {"once": "got_charcoal", "do": [{"give": "charcoal"}, {"say": "SAY_FIRE_TAKE"}], "else": "SAY_FIRE_DONE"}

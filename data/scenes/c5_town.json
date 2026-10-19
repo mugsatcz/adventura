@@ -1,0 +1,81 @@
+{
+  "title": "SCENE_C5_TOWN",
+  "background": "res://art/scenes/c5_town.png",
+  "placeholder_color": "#d8b070",
+  "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
+  "depth_scale": [740, 900, 0.85, 1.0],
+  "lili_start": [200, 820],
+  "entries": {"c4_camp": [200, 820], "c5_saloon": [1780, 820], "c5_stable": [1120, 820]},
+  "hotspots": [
+    {
+      "id": "smith",
+      "name": "HS_C5_TOWN_SMITH",
+      "polygon": [[250, 420], [450, 420], [450, 740], [250, 740]],
+      "walk_to": [520, 800],
+      "interact": "SAY_SMITH_LOOK",
+      "use": {"silver_horseshoe": [{"set": "smith_told"}, {"say": "SAY_SMITH_SHOE", "who": "smith"}]}
+    },
+    {
+      "id": "dust",
+      "name": "HS_C5_TOWN_DUST",
+      "polygon": [[650, 640], [850, 640], [850, 740], [650, 740]],
+      "walk_to": [750, 800],
+      "interact": "SAY_DUST_LOOK",
+      "use": {
+        "magnifier": [
+          {
+            "once": "got_ring",
+            "do": [{"give": "ring"}, {"say": "SAY_DUST_RING"}],
+            "else": "SAY_DUST_EMPTY"
+          }
+        ]
+      }
+    },
+    {
+      "id": "prcek",
+      "name": "HS_C5_TOWN_PRCEK",
+      "polygon": [[1300, 420], [1480, 420], [1480, 740], [1300, 740]],
+      "walk_to": [1250, 800],
+      "interact": [{"if": "prcek_ok", "then": "SAY_PRCEK_OK", "else": "SAY_PRCEK_NO"}],
+      "use": {"farm_letter": [{"set": "prcek_ok"}, {"say": "SAY_PRCEK_LETTER", "who": "prcek"}]}
+    },
+    {
+      "id": "exit_stable",
+      "name": "HS_C5_TOWN_EXIT_STABLE",
+      "polygon": [[980, 400], [1260, 400], [1260, 640], [980, 640]],
+      "walk_to": [1120, 800],
+      "exit": "c5_stable",
+      "exit_if": "prcek_ok",
+      "blocked": "SAY_STABLE_BLOCKED"
+    },
+    {
+      "id": "exit_saloon",
+      "name": "HS_C5_TOWN_EXIT_SALOON",
+      "polygon": [[1730, 350], [1920, 350], [1920, 880], [1730, 880]],
+      "walk_to": [1780, 820],
+      "exit": "c5_saloon"
+    }
+  ],
+  "hints": [
+    {
+      "id": "to_dust",
+      "if": "!got_ring",
+      "keys": ["HINT_TO_DUST_1", "HINT_TO_DUST_2", "HINT_TO_DUST_3"]
+    },
+    {
+      "id": "to_smith",
+      "if": "!smith_told",
+      "keys": ["HINT_TO_SMITH_1", "HINT_TO_SMITH_2", "HINT_TO_SMITH_3"]
+    },
+    {
+      "id": "to_prcek",
+      "if": "!prcek_ok",
+      "keys": ["HINT_TO_PRCEK_1", "HINT_TO_PRCEK_2", "HINT_TO_PRCEK_3"]
+    },
+    {
+      "id": "to_saloon",
+      "if": "true",
+      "keys": ["HINT_TO_SALOON_1", "HINT_TO_SALOON_2", "HINT_TO_SALOON_3"]
+    }
+  ]
+}

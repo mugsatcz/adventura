@@ -1,0 +1,38 @@
+{
+  "title": "SCENE_C7_HOME",
+  "background": "res://art/scenes/c7_home.png",
+  "placeholder_color": "#e8b878",
+  "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
+  "depth_scale": [740, 900, 0.85, 1.0],
+  "lili_start": [200, 820],
+  "entries": {"c6_race": [200, 820]},
+  "on_enter": [{"once": "c7_intro_seen", "do": [{"cutscene": "intro"}]}],
+  "cutscenes": {
+    "intro": [{"say": "CUT_C7_INTRO_1", "who": "narrator"}],
+    "ending": [
+      {"set": "game_done"},
+      {"say": "CUT_C7_END_1", "who": "narrator"},
+      {"say": "CUT_C7_END_2", "who": "sheriff"},
+      {"image": "res://art/cutscenes/end.png", "color": "#f3b562", "caption": "CUT_END_CAPTION2"},
+      {"wait": 4.0},
+      {"image_clear": true}
+    ]
+  },
+  "hotspots": [
+    {
+      "id": "hrom",
+      "name": "HS_C7_HOME_HROM",
+      "polygon": [[900, 400], [1300, 400], [1300, 740], [900, 740]],
+      "walk_to": [840, 800],
+      "interact": "SAY_H_HROM",
+      "use": {"new_blanket": [{"take": "new_blanket"}, {"cutscene": "ending"}]}
+    }
+  ],
+  "hints": [
+    {
+      "id": "ho_blanket",
+      "if": "true",
+      "keys": ["HINT_HO_BLANKET_1", "HINT_HO_BLANKET_2", "HINT_HO_BLANKET_3"]
+    }
+  ]
+}

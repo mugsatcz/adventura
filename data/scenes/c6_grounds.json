@@ -1,0 +1,91 @@
+{
+  "title": "SCENE_C6_GROUNDS",
+  "background": "res://art/scenes/c6_grounds.png",
+  "placeholder_color": "#9ac27a",
+  "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
+  "depth_scale": [740, 900, 0.85, 1.0],
+  "lili_start": [200, 820],
+  "entries": {"c5_stable": [200, 820], "c6_race": [1780, 820]},
+  "hotspots": [
+    {
+      "id": "hrom",
+      "name": "HS_C6_GROUNDS_HROM",
+      "polygon": [[850, 400], [1200, 400], [1200, 740], [850, 740]],
+      "walk_to": [800, 800],
+      "interact": "SAY_G_HROM",
+      "use": {
+        "halter": [{"take": "halter"}, {"set": "halter_on"}, {"say": "SAY_G_HALTER"}],
+        "saddle": [
+          {
+            "if": "has:hromova_deka",
+            "then": [{"take": "saddle"}, {"set": "saddled"}, {"say": "SAY_G_SADDLE"}],
+            "else": "SAY_G_SADDLE_NEED"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smith",
+      "name": "HS_C6_GROUNDS_SMITH",
+      "polygon": [[250, 420], [450, 420], [450, 740], [250, 740]],
+      "walk_to": [520, 800],
+      "interact": "SAY_G_SMITH",
+      "use": {
+        "silver_horseshoe": [{"take": "silver_horseshoe"}, {"set": "horse_shod"}, {"say": "SAY_G_SHOE", "who": "smith"}]
+      }
+    },
+    {
+      "id": "jelen",
+      "name": "HS_C6_GROUNDS_JELEN",
+      "polygon": [[1450, 420], [1630, 420], [1630, 740], [1450, 740]],
+      "walk_to": [1400, 800],
+      "interact": [
+        {
+          "once": "got_saddle",
+          "do": [{"give": "saddle"}, {"say": "SAY_G_JELEN", "who": "jelen"}],
+          "else": "SAY_G_JELEN_AGAIN"
+        }
+      ]
+    },
+    {
+      "id": "mayor",
+      "name": "HS_C6_GROUNDS_MAYOR",
+      "polygon": [[1100, 420], [1280, 420], [1280, 740], [1100, 740]],
+      "walk_to": [1050, 800],
+      "interact": [
+        {
+          "if": "halter_on & horse_shod & saddled",
+          "then": [{"goto": "c6_race"}],
+          "else": "SAY_G_MAYOR_NO"
+        }
+      ]
+    }
+  ],
+  "hints": [
+    {
+      "id": "gr_halter",
+      "if": "has:halter",
+      "keys": ["HINT_GR_HALTER_1", "HINT_GR_HALTER_2", "HINT_GR_HALTER_3"]
+    },
+    {
+      "id": "gr_saddle",
+      "if": "!has:saddle & !saddled",
+      "keys": ["HINT_GR_SADDLE_1", "HINT_GR_SADDLE_2", "HINT_GR_SADDLE_3"]
+    },
+    {
+      "id": "gr_saddle2",
+      "if": "has:saddle",
+      "keys": ["HINT_GR_SADDLE2_1", "HINT_GR_SADDLE2_2", "HINT_GR_SADDLE2_3"]
+    },
+    {
+      "id": "gr_shoe",
+      "if": "!horse_shod",
+      "keys": ["HINT_GR_SHOE_1", "HINT_GR_SHOE_2", "HINT_GR_SHOE_3"]
+    },
+    {
+      "id": "gr_start",
+      "if": "true",
+      "keys": ["HINT_GR_START_1", "HINT_GR_START_2", "HINT_GR_START_3"]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "title": "SCENE_C5_SALOON",
+  "background": "res://art/scenes/c5_saloon.png",
+  "placeholder_color": "#9a6a4a",
+  "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
+  "depth_scale": [740, 900, 0.85, 1.0],
+  "lili_start": [200, 820],
+  "entries": {"c5_town": [200, 820]},
+  "on_enter": [{"once": "c5_intro_seen", "do": [{"cutscene": "intro"}]}],
+  "cutscenes": {
+    "intro": [
+      {
+        "image": "res://art/cutscenes/c5_intro.png",
+        "color": "#b07a4a",
+        "caption": "CUT_C5_INTRO_CAPTION"
+      },
+      {"say": "CUT_C5_INTRO_1", "who": "narrator"},
+      {"image_clear": true}
+    ]
+  },
+  "hotspots": [
+    {
+      "id": "exit_town",
+      "name": "HS_C5_SALOON_EXIT_TOWN",
+      "polygon": [[0, 350], [190, 350], [190, 880], [0, 880]],
+      "walk_to": [150, 820],
+      "exit": "c5_town"
+    },
+    {
+      "id": "sally",
+      "name": "HS_C5_SALOON_SALLY",
+      "polygon": [[500, 420], [700, 420], [700, 740], [500, 740]],
+      "walk_to": [760, 800],
+      "interact": "SAY_SALLY_LOOK",
+      "use": {
+        "ring": [
+          {
+            "once": "got_soap",
+            "do": [{"take": "ring"}, {"give": "soap"}, {"say": "SAY_SALLY_RING", "who": "sally"}],
+            "else": "SAY_SALLY_DONE"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cylindr",
+      "name": "HS_C5_SALOON_CYLINDR",
+      "polygon": [[1250, 420], [1600, 420], [1600, 740], [1250, 740]],
+      "walk_to": [1180, 800],
+      "interact": [{"if": "confronted", "then": "SAY_CYL_DONE", "else": [{"dialogue": "cylindr"}]}]
+    }
+  ],
+  "dialogues": {
+    "cylindr": {
+      "start": "hi",
+      "nodes": {
+        "hi": {
+          "who": "cylindr",
+          "text": "DLG_CYL_HI",
+          "options": [
+            {"text": "DLG_CYL_OPT_PRINT", "if": "has:footprint_copy & !cyl_print", "next": "print"},
+            {"text": "DLG_CYL_OPT_BEARDS", "if": "has:fake_beards & !cyl_beards", "next": "beards"},
+            {
+              "text": "DLG_CYL_OPT_SHOE",
+              "if": "has:silver_horseshoe & smith_told & !cyl_shoe",
+              "next": "shoe"
+            },
+            {
+              "text": "DLG_CYL_OPT_HROM",
+              "if": "cyl_print & cyl_beards & cyl_shoe & !confronted",
+              "next": "hrom"
+            },
+            {"text": "DLG_CYL_OPT_BYE", "next": "bye"}
+          ]
+        },
+        "print": {"who": "cylindr", "text": "DLG_CYL_PRINT", "do": [{"set": "cyl_print"}], "next": "hi"},
+        "beards": {"who": "cylindr", "text": "DLG_CYL_BEARDS", "do": [{"set": "cyl_beards"}], "next": "hi"},
+        "shoe": {"who": "cylindr", "text": "DLG_CYL_SHOE", "do": [{"set": "cyl_shoe"}], "next": "hi"},
+        "hrom": {"who": "cylindr", "text": "DLG_CYL_HROM", "do": [{"set": "confronted"}]},
+        "bye": {"who": "cylindr", "text": "DLG_CYL_BYE"}
+      }
+    }
+  },
+  "hints": [
+    {
+      "id": "sa_ring",
+      "if": "!got_soap & has:ring",
+      "keys": ["HINT_SA_RING_1", "HINT_SA_RING_2", "HINT_SA_RING_3"]
+    },
+    {
+      "id": "sa_proof",
+      "if": "!confronted",
+      "keys": ["HINT_SA_PROOF_1", "HINT_SA_PROOF_2", "HINT_SA_PROOF_3"]
+    },
+    {
+      "id": "sa_done",
+      "if": "confronted",
+      "keys": ["HINT_SA_DONE_1", "HINT_SA_DONE_2", "HINT_SA_DONE_3"]
+    }
+  ]
+}

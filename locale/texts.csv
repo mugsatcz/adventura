@@ -252,8 +252,6 @@ SAY_HORSE_OK,Bubák se napil a je spokojený.
 SAY_HORSE_DRINK,Bubák vypil celé vědro. Je připravený k cestě.
 SAY_C2_END_1,"Bubák je napojený a víme, kudy dál. Jedeme na nádraží!"
 SAY_C2_END_2,"Hrom je ve vlaku, cítím to!"
-CUT_END_CAPTION,Konec ukázky. Pokračování příště.
-SAY_END_DEMO,Hotové jsou kapitoly 1 a 2. Další kapitoly se připravují.
 HINT_LOOK_MAP_1,Z vyhlídky se dá porovnat krajina s mapou.
 HINT_LOOK_MAP_2,"Mapa z truhly ukáže, jestli je stopa pravá."
 HINT_LOOK_MAP_3,Přetáhni mapu na výhled na kraj.
@@ -263,3 +261,355 @@ HINT_LOOK_BUSH_3,Přetáhni suchou větev na keř.
 HINT_LOOK_WATER_1,Bubák je celý zaprášený a má žízeň.
 HINT_LOOK_WATER_2,Potřebuješ vodu z pramene a vědro.
 HINT_LOOK_WATER_3,Přetáhni vědro na pramen a pak plné vědro na Bubáka.
+CHAR_JELEN,Malý Jelen
+CHAR_PEPIK,Průvodčí Pepík
+CHAR_HEDVIKA,Babička Hedvika
+CHAR_COOK,Kuchař
+CHAR_PARROT,Papoušek Kapitán
+ITEM_HALTER,Ohlávka
+LOOK_HALTER,"Hromova ohlávka s cedulkou: Černý Blesk, soutěžní kůň č. 7."
+ITEM_HROMOVA_DEKA,Hromova deka
+LOOK_HROMOVA_DEKA,Hromova deka. Voní po něm.
+ITEM_MAP_SCRAP,Útržek mapy
+LOOK_MAP_SCRAP,Útržek mapy železnice s kroužkem u Red Buffala. Vlak jede tam.
+ITEM_GLASSES,Brýle
+LOOK_GLASSES,Silné brýle. Papoušek je ukradl babičce Hedvice.
+ITEM_TICKETS,Jízdenky
+LOOK_TICKETS,"Dvě platné jízdenky po synech, kteří vlak zmeškali."
+ITEM_BISCUIT,Sušenka
+LOOK_BISCUIT,Kuchařova sušenka. Papoušek by se jí nezdráhal.
+SAY_CART_PUSH,Vozík mi zavazí na nástupišti. Odtlačím ho!
+HS_C3_STATION_CART,Nakládací vozík
+SAY_STATION_TRAIN,Vlak už jede! Na posledním vagónu visí Hromova deka. Musím za ním!
+HS_C3_STATION_TRAIN,Odjíždějící vlak
+CUT_C3_ARRIVAL_CAPTION,Nádraží v Silver Creeku
+CUT_C3_ARRIVAL_1,Z nádraží právě odjížděl vlak. Na posledním vagónu se houpala Hromova deka.
+CUT_C3_ARRIVAL_2,"Šerife, Hrom je ve vlaku!"
+CUT_C3_DEP_CAPTION,Vlak se rozjíždí
+CUT_C3_DEP_1,"Lili, skoč na schůdek! Já jdu hned za tebou!"
+CUT_C3_DEP_2,Držím se!
+HINT_ST_1,Vlak odjíždí a něco ti brání v cestě na nástupišti.
+HINT_ST_2,Na nástupišti stojí nakládací vozík.
+HINT_ST_3,Ťukni na nakládací vozík a odtlač ho.
+SCENE_C3_STATION,Nádraží
+SAY_DEKA_TAKE,"Hromova deka! Je tady, tak je Hrom někde blízko."
+SAY_DEKA_DONE,Deku už mám.
+HS_C3_PLATFORM_BLANKET,Deka na zábradlí
+SAY_COACH_DOOR_LOCKED,Dveře jsou zamčené. Něco tenkého by je možná otevřelo.
+SAY_COACH_DOOR_PICK,Stejný trik jako zloději! Zámek cvakl.
+HS_C3_PLATFORM_EXIT_COACH,Dveře do vagónu
+HINT_PL_DOOR_1,Dveře do vagónu jsou zamčené.
+HINT_PL_DOOR_2,Zloději otevřeli stájovou západku tenkým předmětem.
+HINT_PL_DOOR_3,Přetáhni drát na dveře do vagónu.
+SCENE_C3_PLATFORM,Plošina vagónu
+HS_C3_COACH_EXIT_PLATFORM,Zpět na plošinu
+HS_C3_COACH_EXIT_DINING,Do jídelního vozu
+SAY_CATTLE_LOCKED,Dveře do dalšího vagónu jsou zamčené. Průvodčí má asi klíč.
+HS_C3_COACH_EXIT_CATTLE,Dveře do dobytčího vozu
+SAY_SEAT_SCRAP,Na sedadle leží útržek mapy železnice. Kroužek je u Red Buffala!
+SAY_SEAT_DONE,Víc tu nic není.
+HS_C3_COACH_SEAT,Prázdné sedadlo
+DLG_GRANNY_THANKS,"Děkuji ti, holčičko. Teď aspoň vidím, kdo mi chce prodat lístek!"
+DLG_GRANNY_LOST,"Ach, moje brýle! Nějaký papoušek mi je sebral a bez nich nic nevidím."
+DLG_GRANNY_GIVE,Moje brýle! Vezmi si tyhle dvě jízdenky po mých synech. Vlak jim ujel.
+HS_C3_COACH_GRANNY,Babička Hedvika
+DLG_PEPIK_OK,"Jen pokračujte, slečno."
+DLG_PEPIK_STERN,Bez jízdenky se dál nejde. Pravidla jsou pravidla.
+DLG_PEPIK_UNLOCK,"Dvě platné jízdenky. V pořádku, odemykám dobytčí vůz."
+HS_C3_COACH_CONDUCTOR,Průvodčí Pepík
+HINT_CO_TICKET_1,Průvodčí chce jízdenku. Tu ale nemáš.
+HINT_CO_TICKET_2,"Babička Hedvika má nějaký problém. Pomoz jí, třeba se odvděčí."
+HINT_CO_TICKET_3,"Brýle babičce vrátíš až v jídelním voze, kde je papoušek."
+HINT_CO_PEPIK_1,Jízdenky máš. Komu je ukázat?
+HINT_CO_PEPIK_2,Dveře do dalšího vagónu hlídá průvodčí.
+HINT_CO_PEPIK_3,Přetáhni jízdenky na průvodčího Pepíka.
+SCENE_C3_COACH,Osobní vůz
+HS_C3_DINING_EXIT_COACH,Zpět do osobního vozu
+DLG_COOK_DONE,Ta polévka je teď nejlepší široko daleko!
+DLG_COOK_NEED,Polévka je bez chuti. Chyběla by mi pořádná mrkev.
+DLG_COOK_BISCUIT,Mrkev do polévky! Za to ti dám sušenku.
+HS_C3_DINING_COOK,Kuchař
+SAY_PARROT_LOOK,Papoušek má v zobáku brýle. Pustí je jen za něco lesklého nebo dobrého.
+SAY_PARROT_DROP,Papoušek pustil brýle a vzal si sušenku. Domluvili jsme se.
+HS_C3_DINING_PARROT,Papoušek Kapitán
+HINT_DI_COOK_1,Kuchař je nespokojený s polévkou.
+HINT_DI_COOK_2,"Kuchaři chybí do polévky jedna zelenina, kterou nosíš od rána."
+HINT_DI_COOK_3,Přetáhni mrkev na kuchaře.
+HINT_DI_PARROT_1,Papoušek drží cizí brýle.
+HINT_DI_PARROT_2,Papoušek by rád něco dobrého.
+HINT_DI_PARROT_3,Přetáhni sušenku na papouška.
+SCENE_C3_DINING,Jídelní vůz
+SAY_COOK_DUP,Mrkev už jsi mi dala.
+HS_C3_CATTLE_EXIT_COACH,Zpět do osobního vozu
+SAY_CRACK_AGAIN,Venku už nikdo není.
+HS_C3_CATTLE_CRACK,Škvíra ve stěně
+SAY_CRATE_MOVE,Přistrčila jsem bednu pod hák.
+SAY_CRATE_DONE,Bedna už stojí pod hákem.
+HS_C3_CATTLE_CRATE,Bedna
+SAY_HALTER_NOTE,"Hromova ohlávka! Na cedulce stojí: Černý Blesk, soutěžní kůň číslo 7."
+SAY_TRAIN_ARRIVES,Red Buffalo! Vystupovat!
+SAY_HOOK_HIGH,Hák je moc vysoko. Něco bych si měla podstavit.
+HS_C3_CATTLE_HOOK,Vysoký hák
+CUT_C3_PEEK_CAPTION,Zastávka u vodárny
+CUT_C3_PEEK_1,Vlak zastavil u vodárny. Tři muži v čistých kabátech vedli Hroma pryč do prérie.
+CUT_C3_PEEK_2,Hrome! Počkej! A tamhle na háku visí jeho ohlávka!
+HINT_CA_PEEK_1,Škvírou ve stěně se dá vyhlédnout ven.
+HINT_CA_PEEK_2,Zastavili jsme. Co se děje venku?
+HINT_CA_PEEK_3,Ťukni na škvíru ve stěně.
+HINT_CA_HOOK_1,Na vysokém háku něco visí.
+HINT_CA_HOOK_2,"Lili je malá. Hodilo by se něco, na co si stoupnout."
+HINT_CA_HOOK_3,Přistrč bednu pod hák a pak ťukni na hák.
+SCENE_C3_CATTLE,Dobytčí vůz
+SAY_HOOK_DONE,Ohlávku už mám.
+CHAR_OWL,Náčelník Moudrá Sova
+ITEM_HARD_PITCH,Tvrdá smola
+LOOK_HARD_PITCH,Hrouda tvrdé smoly. Studená se nedá použít.
+ITEM_WARM_PITCH,Teplá smola
+LOOK_WARM_PITCH,Měkká teplá smola. Ucpe jakoukoli díru.
+ITEM_PADDLE,Pádlo
+LOOK_PADDLE,"Pevné pádlo, které bobr nechtěl dát zadarmo."
+ITEM_SUITCASE_KEY,Klíček od kufru
+LOOK_SUITCASE_KEY,Malý klíček z boty podvodníka.
+ITEM_FAKE_BEARDS,Falešné vousy
+LOOK_FAKE_BEARDS,Falešné vousy a šátky. Takhle se tedy převlékají falešní bandité.
+ITEM_FARM_LETTER,Dopis o farmě
+LOOK_FARM_LETTER,Dopis z banky: bez výhry v soutěži přijdou o farmu.
+HS_C4_VILLAGE_EXIT_CHIEF,Do týpí náčelníka
+HS_C4_VILLAGE_EXIT_RIVER,K řece
+SAY_VILLAGE_FIRE,Táborový oheň. Hřeje a je u něj bezpečno.
+SAY_PITCH_WARM,Smola u ohně změkla. Teď se dá použít.
+HS_C4_VILLAGE_FIRE,Táborový oheň
+HS_C4_VILLAGE_JELEN,Malý Jelen
+CUT_C4_INTRO_CAPTION,Indiánská vesnice u Red Buffala
+CUT_C4_INTRO_1,V indiánské vesnici je přivítal Liliin kamarád Malý Jelen.
+CUT_C4_INTRO_2,Viděl jsem tři muže s tvým koněm. Ale nebyli to banditi. Měli čisté kabáty a jeden nesl mapu železnice.
+DLG_JELEN_HI,"Jsem tu, Lili. S čím ti pomůžu?"
+DLG_JELEN_OPT_CAMP,Kde ti muži tábořili?
+DLG_JELEN_OPT_CANOE,Jak se dostanu přes řeku?
+DLG_JELEN_OPT_BYE,"Zatím nic, díky."
+DLG_JELEN_CAMP,Tábořili za řekou. Jenže naše kánoe je děravá.
+DLG_JELEN_CANOE,Zeptej se náčelníka. Má smolu na opravy. A pádlo se dá vyměnit u bobra.
+DLG_JELEN_BYE,"Šťastnou cestu, Lili."
+HINT_VI_CANOE_1,"Malý Jelen říkal, že kánoe je děravá."
+HINT_VI_CANOE_2,Náčelník Moudrá Sova má všelijaké potřeby na opravu lodí.
+HINT_VI_CANOE_3,Jdi do týpí vlevo a poproś náčelníka o pomoc s kánoí.
+HINT_VI_PITCH_1,Tvrdá smola se musí něčím zahřát.
+HINT_VI_PITCH_2,V táboře hoří oheň.
+HINT_VI_PITCH_3,Přetáhni tvrdou smolu na oheň.
+HINT_VI_RIVER_1,Teplá smola je dobrá na děravou kánoi.
+HINT_VI_RIVER_2,Kánoe leží u řeky vpravo.
+HINT_VI_RIVER_3,Jdi k řece.
+SCENE_C4_VILLAGE,Indiánská vesnice
+HS_C4_CHIEF_EXIT_VILLAGE,Zpět do vesnice
+DLG_CHIEF_PITCH,Chceš opravit kánoi? Mám tu tvrdou smolu. Musíš ji ale nejdřív ohřát.
+DLG_CHIEF_AGAIN,Smolu už máš. Ohřej ji u ohně.
+DLG_CHIEF_SHOE,Takovou podkovu kuje kovář v Red Buffalu pro velkou soutěž. Stříbrné dostávají jen soutěžní koně.
+HS_C4_CHIEF_CHIEF,Náčelník Moudrá Sova
+HINT_CH_PITCH_1,Náčelník má možná něco na opravu kánoe.
+HINT_CH_PITCH_2,Poproś ho o pomoc s kánoí.
+HINT_CH_PITCH_3,Ťukni na náčelníka.
+SCENE_C4_CHIEF,Týpí náčelníka
+HS_C4_RIVER_EXIT_VILLAGE,Zpět do vesnice
+SAY_CANOE_FIX,Díra je ucpaná. Kánoe drží vodu.
+SAY_CROSS,S Malým Jelenem jsme přeplavili řeku.
+HS_C4_RIVER_CANOE,Kánoe
+SAY_BEAVER_LOOK,Bobr si hlídá hromadu klacků a pádlo. Zadarmo ho nedá.
+SAY_BEAVER_TRADE,Bobr si vzal větev a pustil pádlo. Dobrý obchod.
+HS_C4_RIVER_BEAVER,Bobr
+HINT_RI_PADDLE_1,Na přeplutí potřebuješ i pádlo.
+HINT_RI_PADDLE_2,Bobr má pádlo a rád by klacek.
+HINT_RI_PADDLE_3,Přetáhni suchou větev na bobra.
+HINT_RI_CANOE_1,Kánoe je děravá.
+HINT_RI_CANOE_2,Díru ucpe teplá smola.
+HINT_RI_CANOE_3,Přetáhni teplou smolu na kánoi.
+HINT_RI_CROSS_1,Máš kánoi i pádlo.
+HINT_RI_CROSS_2,Zkus přeplout řeku.
+HINT_RI_CROSS_3,Přetáhni pádlo na kánoi.
+SCENE_C4_RIVER,Řeka a brod
+SAY_CANOE_OK,Kánoe drží. Můžeme vyrazit.
+SAY_CANOE_HOLE,Kánoe má velkou díru. Takhle by se potopila.
+SAY_CANOE_HOLE_FIRST,Nejdřív musím opravit díru v kánoi.
+SAY_BEAVER_DONE,Pádlo už mám.
+HS_C4_CAMP_EXIT_RIVER,Zpět k řece
+SAY_BOOT_KEY,V botě je schovaný klíček! Asi od toho kufru.
+SAY_BOOT_DONE,V botě už nic není.
+SAY_BOOTS_MATCH,Hvězdičky na podrážce přesně sedí. Tohle jsou boty našich zlodějů!
+SAY_BOOTS_NEED_LUPA,Zblízka to nevidím. Potřebuju lupu.
+HS_C4_CAMP_BOOTS,Boty u ohně
+SAY_SUITCASE_LOCKED,Zamčený kufr. Bez klíčku ho neotevřu.
+SAY_SUITCASE_OPEN,"Falešné vousy a převleky! A dopis: bez výhry přijdou o farmu. Ti muži nejsou banditi, jen zoufalí."
+SAY_SUITCASE_EMPTY,Kufr už je prázdný.
+HS_C4_CAMP_SUITCASE,Kufr
+SAY_POSTER2_1,Velká soutěž o Zlatou podkovu! Dnes v saloonu U Zlaté Podkovy v Red Buffalu.
+SAY_POSTER2_2,Tak tam vezou Hroma!
+SAY_POSTER2_AGAIN,Soutěž je dnes v saloonu v Red Buffalu.
+HS_C4_CAMP_POSTER,Plakát
+SAY_NEED_PROOF,"Ještě nemám dost důkazů. Musím prohlédnout boty, otevřít kufr a přečíst plakát."
+HS_C4_CAMP_EXIT_TOWN,Do Red Buffala
+HINT_CP_BOOTS_1,Boty u ohně mohou být důležité.
+HINT_CP_BOOTS_2,"Porovnej je s obtiskem, který máš. Potřebuješ lupu."
+HINT_CP_BOOTS_3,Přetáhni obtisk boty na boty u ohně.
+HINT_CP_KEY_1,V botách se může cosi skrývat.
+HINT_CP_KEY_2,Ťukni na boty u ohně a prohledej je.
+HINT_CP_KEY_3,Ťukni na boty a vezmi klíček.
+HINT_CP_CASE_1,"Klíček se hodí k něčemu, co je zamčené."
+HINT_CP_CASE_2,U ohně stojí zamčený kufr.
+HINT_CP_CASE_3,Přetáhni klíček na kufr.
+HINT_CP_POSTER_1,Na stromě visí plakát.
+HINT_CP_POSTER_2,"Plakát říká, kam zloději míří."
+HINT_CP_POSTER_3,Ťukni na plakát.
+SCENE_C4_CAMP,Tábořiště
+CHAR_PRCEK,Prcek
+CHAR_SMITH,Kovář Gustav
+CHAR_CYLINDR,Pan Cylindr
+CHAR_SALLY,Barmanka Sally
+ITEM_RING,Prstýnek
+LOOK_RING,Malý zlatý prstýnek. Někdo ho určitě hledá.
+ITEM_SOAP,Mýdlo
+LOOK_SOAP,Voňavé mýdlo od barmanky.
+ITEM_SOAPY_WATER,Mýdlová voda
+LOOK_SOAPY_WATER,Kbelík plný mýdlové vody. Čas na koupel.
+SAY_COMBINE_SOAPY,Mýdlová voda je hotová. Hrom se bude lesknout.
+SAY_SMITH_LOOK,"Kovář kuje podkovy. Říká, že stříbrná je ze soutěžní stáje."
+SAY_SMITH_SHOE,Tu podkovu jsem kul pro pana Cylindra. Soutěžní koně mají stříbrné.
+HS_C5_TOWN_SMITH,Kovář Gustav
+SAY_DUST_LOOK,"Prach a kamínky. Něco se tu třpytí, ale špatně vidím."
+SAY_DUST_RING,Pod lupou se zalesklo zlato. Našla jsem prstýnek!
+HS_C5_TOWN_DUST,Prach u cesty
+SAY_PRCEK_LETTER,"Dopis z banky? Aha. Tak dobře, můžeš do stáje. Ale nic neříkej."
+HS_C5_TOWN_PRCEK,Prcek
+SAY_STABLE_BLOCKED,Prcek hlídá vrata. Dovnitř mě nepustí.
+HS_C5_TOWN_EXIT_STABLE,Do stáje
+HS_C5_TOWN_EXIT_SALOON,Do saloonu
+HINT_TO_DUST_1,V prachu se něco třpytí.
+HINT_TO_DUST_2,Prohlédni prach lupou.
+HINT_TO_DUST_3,Přetáhni lupu na prach u cesty.
+HINT_TO_SMITH_1,Kovář pozná podkovy.
+HINT_TO_SMITH_2,Ukaž mu stříbrnou podkovu.
+HINT_TO_SMITH_3,Přetáhni stříbrnou podkovu na kováře.
+HINT_TO_PRCEK_1,Prcek hlídá vrata stáje.
+HINT_TO_PRCEK_2,Přesvědčí ho dopis o farmě.
+HINT_TO_PRCEK_3,Přetáhni dopis na Prcka.
+HINT_TO_SALOON_1,Soutěž se koná v saloonu.
+HINT_TO_SALOON_2,Pan Cylindr je tam. Měla bys mu předložit důkazy.
+HINT_TO_SALOON_3,Jdi doprava do saloonu.
+SCENE_C5_TOWN,Red Buffalo
+SAY_DUST_EMPTY,Víc tu nic není.
+SAY_PRCEK_OK,"Prcek se na mě zamračí, ale nechá mě být."
+SAY_PRCEK_NO,"Prcek hlídá vrata. Řekl, že dovnitř nikdo nesmí."
+HS_C5_SALOON_EXIT_TOWN,Ven na ulici
+SAY_SALLY_LOOK,Sally leští sklenice. Prý přišla o prstýnek.
+SAY_SALLY_RING,"Můj prstýnek! Tady máš mýdlo, i když ti nevím k čemu bude."
+HS_C5_SALOON_SALLY,Barmanka Sally
+HS_C5_SALOON_CYLINDR,Pan Cylindr a jeho přátelé
+CUT_C5_INTRO_CAPTION,Saloon U Zlaté Podkovy
+CUT_C5_INTRO_1,U stolu seděl pan Cylindr a se dvěma pomocníky pil limonádu. Z pomocníků trčely nalepené vousy.
+DLG_CYL_HI,"Co chceš, děvče? Mám důležité jednání."
+DLG_CYL_OPT_PRINT,Ukázat obtisk boty.
+DLG_CYL_OPT_BEARDS,Ukázat falešné vousy.
+DLG_CYL_OPT_SHOE,Ukázat stříbrnou podkovu.
+DLG_CYL_OPT_HROM,"Řeknu, co vím o Hromovi."
+DLG_CYL_OPT_BYE,"Nic, jen jsem se rozhlížela."
+DLG_CYL_PRINT,Obtisk boty? No a co. Takových bot je spousta.
+DLG_CYL_BEARDS,"Falešné vousy? To jsou, ehm, kulisy do divadla."
+DLG_CYL_SHOE,Ta podkova je moje. Nechal jsem ji zhotovit. Ach jo.
+DLG_CYL_HROM,"Dobře, přiznávám. Je to moje chyba. Hrom je u mě ve stáji, ale nechal jsem ho jen pohlídat. Vrátím ti ho, když ho umyješ a zapískáš na píšťalku."
+DLG_CYL_BYE,Tak se běž rozhlížet jinam.
+HINT_SA_RING_1,Barmanka Sally něco postrádá.
+HINT_SA_RING_2,Má ten prstýnek na prstu?
+HINT_SA_RING_3,Přetáhni prstýnek na Sally.
+HINT_SA_PROOF_1,"Pan Cylindr zapírá, ale důkazy mluví."
+HINT_SA_PROOF_2,"Ukaž mu obtisk, vousy i podkovu."
+HINT_SA_PROOF_3,Mluv s Cylindrem a vyber všechny důkazy.
+HINT_SA_DONE_1,Cylindr přiznal vinu.
+HINT_SA_DONE_2,Hrom je ve stáji.
+HINT_SA_DONE_3,Jdi ven a zamiř do stáje.
+SCENE_C5_SALOON,Saloon U Zlaté Podkovy
+SAY_SALLY_DONE,Sally mi ještě jednou poděkovala.
+SAY_CYL_DONE,"Cylindr se na mě nedíval. Ví, že má smůlu."
+HS_C5_STABLE_EXIT_TOWN,Ven na ulici
+SAY_TROUGH_LOOK,Koryto plné čisté vody.
+SAY_TROUGH_FILL,Nabrala jsem plný kbelík.
+HS_C5_STABLE_TROUGH,Koryto
+SAY_HOOVES,"Hrom má podkovy nové, ale vpravo vzadu mu jedna chybí."
+HS_C5_STABLE_HOOVES,Kopyta
+SAY_HROM_BLANKET,Hrom ucítil svou starou deku a hned se uklidnil.
+SAY_HROM_WASH,Hrom se nechal umýt a lesknul se.
+HS_C5_STABLE_HROM,Hrom
+CUT_C5_WHISTLE_CAPTION,Hrom se vrací
+CUT_C5_WHISTLE_1,Lili zapískala a Hrom zvedl hlavu. Poznal ji.
+CUT_C5_WHISTLE_2,"Dobře, Lili. Hrom je tvůj. Jen ho zítra pošli na závod. Zlatou podkovu si zaslouží."
+CUT_C5_WHISTLE_3,"Tohle mu dluhy nesmyjí. Ale pomůžu vám s farmou, to slibuju."
+HINT_ST_WATER_1,Hrom je špinavý.
+HINT_ST_WATER_2,Nabereš vodu v koryťě.
+HINT_ST_WATER_3,Přetáhni kbelík na koryto.
+HINT_ST_CALM_1,Hrom je rozrušený.
+HINT_ST_CALM_2,"Uklidní ho něco, co voní domovem."
+HINT_ST_CALM_3,Přetáhni Hromovu deku na Hroma.
+HINT_ST_SOAP_1,"Hrom je klidný, teď ho umyj."
+HINT_ST_SOAP_2,Potřebuješ mýdlo a vodu v kbelíku.
+HINT_ST_SOAP_3,Spoj mýdlo s kbelíkem vody a přetáhni na Hroma.
+HINT_ST_WHISTLE_1,Hrom je čistý a klidný.
+HINT_ST_WHISTLE_2,Pomůže ti píšťalka.
+HINT_ST_WHISTLE_3,Přetáhni píšťalku na Hroma.
+SCENE_C5_STABLE,Stáj pana Cylindra
+SAY_HROM_CALM,Hrom stojí klidně a dívá se na mě.
+SAY_HROM_WILD,Hrom je rozrušený. Takhle se ho ani nedotknu.
+SAY_HROM_NOT_CALM,Hrom se vzpírá. Nejdřív ho musím uklidnit.
+SAY_WHISTLE_NOT_YET,Ještě není čas. Hrom musí být čistý a Cylindr musí přiznat vinu.
+CHAR_MAYOR,Starosta
+ITEM_SADDLE,Sedlo
+LOOK_SADDLE,Kožené sedlo od Malého Jelena.
+ITEM_GOLDEN_HORSESHOE,Zlatá podkova
+LOOK_GOLDEN_HORSESHOE,Zlatá podkova za vítězství v soutěži.
+ITEM_NEW_BLANKET,Nová deka
+LOOK_NEW_BLANKET,"Měkká nová deka pro Hroma, dárek od starosty."
+SAY_G_HROM,Hrom se nemůže dočkat závodu.
+SAY_G_HALTER,Ohlávka sedí přesně.
+SAY_G_SADDLE,Sedlo na dece sedí.
+HS_C6_GROUNDS_HROM,Hrom
+SAY_G_SMITH,Gustav čeká s kladívkem.
+SAY_G_SHOE,Gustav přibil stříbrnou podkovu na kopyto.
+HS_C6_GROUNDS_SMITH,Kovář Gustav
+SAY_G_JELEN,"Tady je sedlo, Lili. Hromovi bude slušet."
+HS_C6_GROUNDS_JELEN,Malý Jelen
+HS_C6_GROUNDS_MAYOR,Starosta
+HINT_GR_HALTER_1,Hrom potřebuje ohlávku.
+HINT_GR_HALTER_2,Máš ji v inventáři.
+HINT_GR_HALTER_3,Přetáhni ohlávku na Hroma.
+HINT_GR_SADDLE_1,Malý Jelen má sedlo.
+HINT_GR_SADDLE_2,Promluv si s ním.
+HINT_GR_SADDLE_3,Ťukni na Malého Jelena.
+HINT_GR_SADDLE2_1,Pod sedlo patří deka.
+HINT_GR_SADDLE2_2,Máš Hromovu deku.
+HINT_GR_SADDLE2_3,Přetáhni sedlo na Hroma.
+HINT_GR_SHOE_1,Hromovi chybí podkova.
+HINT_GR_SHOE_2,Gustav ji přibije.
+HINT_GR_SHOE_3,Přetáhni stříbrnou podkovu na kováře.
+HINT_GR_START_1,"Až bude Hrom připraven, ohlaš start."
+HINT_GR_START_2,Starosta dá povel.
+HINT_GR_START_3,Ťukni na starostu.
+SCENE_C6_GROUNDS,Závodiště
+SAY_G_SADDLE_NEED,Pod sedlo patří deka. Bez ní by Hroma tlačilo.
+SAY_G_JELEN_AGAIN,Malý Jelen se usmál: Hodně štěstí.
+SAY_G_MAYOR_NO,"Starosta čeká. Hrom ještě nemá všechno: ohlávku, podkovu a sedlo."
+SAY_R_TRACK,Dráha je připravená.
+HS_C6_RACE_TRACK,Závodní dráha
+CUT_C6_RACE_CAPTION,Závod o Zlatou podkovu
+CUT_C6_RACE_1,"Hrom vystřelil jako blesk. Lili se držela hřívy a cíl byl nakonec dřív, než stačila zavřít oči."
+CUT_C6_RACE_2,"Vyhráli jste, Lili! Zlatá podkova je vaše."
+CUT_C6_RACE_3,"Za tu farmu už se nebojím. Omlouvám se, Lili. Chtěl jsem jen vyhrát."
+HINT_RA_GO_1,Závod už začal.
+HINT_RA_GO_2,Počkej na konec.
+HINT_RA_GO_3,Jdi domů.
+SCENE_C6_RACE,Závod o Zlatou podkovu
+SAY_H_HROM,Hrom čeká na něco od Lili.
+HS_C7_HOME_HROM,Hrom
+CUT_C7_INTRO_1,"Farma, stáj, rodná střecha. Doma je doma."
+CUT_C7_END_1,Lili přehodila Hromovi novou deku přes hřbet. Hrom spokojeně zafrkal.
+CUT_C7_END_2,Jednou z tebe bude nejlepší šerif široko daleko.
+CUT_END_CAPTION2,Konec. Děkujeme za hraní!
+HINT_HO_BLANKET_1,Hrom si zaslouží odměnu.
+HINT_HO_BLANKET_2,Máš novou deku.
+HINT_HO_BLANKET_3,Přetáhni novou deku na Hroma.
+SCENE_C7_HOME,Domů na farmu

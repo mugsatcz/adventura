@@ -10,10 +10,7 @@
     "end_slice": [
       {"say": "SAY_C2_END_1", "who": "sheriff"},
       {"say": "SAY_C2_END_2", "who": "lili"},
-      {"image": "res://art/cutscenes/end_slice.png", "color": "#f3b562", "caption": "CUT_END_CAPTION"},
-      {"wait": 4.0},
-      {"image_clear": true},
-      {"say": "SAY_END_DEMO", "who": "narrator"}
+      {"goto": "c3_station"}
     ]
   },
   "hotspots": [

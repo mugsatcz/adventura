@@ -3,5 +3,16 @@
   "joe": {"name": "CHAR_JOE", "color": "#9ad0ff", "pitch": 130},
   "sheriff": {"name": "CHAR_SHERIFF", "color": "#ffa36e", "pitch": 110},
   "rosie": {"name": "CHAR_ROSIE", "color": "#f2a1c4", "pitch": 260},
+  "jelen": {"name": "CHAR_JELEN", "color": "#8fe0a0", "pitch": 300},
+  "pepik": {"name": "CHAR_PEPIK", "color": "#c7b6ff", "pitch": 150},
+  "hedvika": {"name": "CHAR_HEDVIKA", "color": "#f0c2ff", "pitch": 240},
+  "cook": {"name": "CHAR_COOK", "color": "#ffe08a", "pitch": 170},
+  "parrot": {"name": "CHAR_PARROT", "color": "#7fe3d0", "pitch": 520},
+  "owl": {"name": "CHAR_OWL", "color": "#d0b48a", "pitch": 120},
+  "prcek": {"name": "CHAR_PRCEK", "color": "#c9a27a", "pitch": 260},
+  "smith": {"name": "CHAR_SMITH", "color": "#b0b0b8", "pitch": 140},
+  "cylindr": {"name": "CHAR_CYLINDR", "color": "#6a5a8a", "pitch": 170},
+  "sally": {"name": "CHAR_SALLY", "color": "#e08a9a", "pitch": 280},
+  "mayor": {"name": "CHAR_MAYOR", "color": "#8a9a6a", "pitch": 150},
   "narrator": {"color": "#ffffff", "pitch": 0}
 }

@@ -1,0 +1,58 @@
+{
+  "title": "SCENE_C3_DINING",
+  "background": "res://art/scenes/c3_dining.png",
+  "placeholder_color": "#b9774f",
+  "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
+  "depth_scale": [740, 900, 0.85, 1.0],
+  "lili_start": [260, 830],
+  "entries": {"c3_coach": [260, 830]},
+  "hotspots": [
+    {
+      "id": "exit_coach",
+      "name": "HS_C3_DINING_EXIT_COACH",
+      "polygon": [[0, 350], [190, 350], [190, 880], [0, 880]],
+      "walk_to": [150, 820],
+      "exit": "c3_coach"
+    },
+    {
+      "id": "cook",
+      "name": "HS_C3_DINING_COOK",
+      "polygon": [[500, 420], [760, 420], [760, 740], [500, 740]],
+      "walk_to": [630, 800],
+      "interact": [
+        {
+          "if": "got_biscuit",
+          "then": [{"say": "DLG_COOK_DONE", "who": "cook"}],
+          "else": [{"say": "DLG_COOK_NEED", "who": "cook"}]
+        }
+      ],
+      "use": {
+        "carrot": [
+          {"take": "carrot"},
+          {"once": "got_biscuit", "do": [{"give": "biscuit"}], "else": "SAY_COOK_DUP"},
+          {"say": "DLG_COOK_BISCUIT", "who": "cook"}
+        ]
+      }
+    },
+    {
+      "id": "parrot",
+      "name": "HS_C3_DINING_PARROT",
+      "polygon": [[1150, 380], [1350, 380], [1350, 560], [1150, 560]],
+      "walk_to": [1250, 800],
+      "interact": "SAY_PARROT_LOOK",
+      "use": {"biscuit": [{"take": "biscuit"}, {"give": "glasses"}, {"say": "SAY_PARROT_DROP"}]}
+    }
+  ],
+  "hints": [
+    {
+      "id": "di_cook",
+      "if": "!got_biscuit",
+      "keys": ["HINT_DI_COOK_1", "HINT_DI_COOK_2", "HINT_DI_COOK_3"]
+    },
+    {
+      "id": "di_parrot",
+      "if": "got_biscuit & !has:glasses & !granny_happy",
+      "keys": ["HINT_DI_PARROT_1", "HINT_DI_PARROT_2", "HINT_DI_PARROT_3"]
+    }
+  ]
+}

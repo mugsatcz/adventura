@@ -1,0 +1,39 @@
+{
+  "title": "SCENE_C4_CHIEF",
+  "background": "res://art/scenes/c4_chief.png",
+  "placeholder_color": "#b88358",
+  "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
+  "depth_scale": [740, 900, 0.85, 1.0],
+  "lili_start": [260, 830],
+  "entries": {"c4_village": [260, 830]},
+  "hotspots": [
+    {
+      "id": "exit_village",
+      "name": "HS_C4_CHIEF_EXIT_VILLAGE",
+      "polygon": [[0, 350], [190, 350], [190, 880], [0, 880]],
+      "walk_to": [150, 820],
+      "exit": "c4_village"
+    },
+    {
+      "id": "chief",
+      "name": "HS_C4_CHIEF_CHIEF",
+      "polygon": [[1000, 380], [1250, 380], [1250, 740], [1000, 740]],
+      "walk_to": [950, 800],
+      "interact": [
+        {
+          "once": "got_pitch",
+          "do": [{"say": "DLG_CHIEF_PITCH", "who": "owl"}, {"give": "hard_pitch"}],
+          "else": [{"say": "DLG_CHIEF_AGAIN", "who": "owl"}]
+        }
+      ],
+      "use": {"silver_horseshoe": [{"set": "chief_horseshoe"}, {"say": "DLG_CHIEF_SHOE", "who": "owl"}]}
+    }
+  ],
+  "hints": [
+    {
+      "id": "ch_pitch",
+      "if": "!got_pitch",
+      "keys": ["HINT_CH_PITCH_1", "HINT_CH_PITCH_2", "HINT_CH_PITCH_3"]
+    }
+  ]
+}

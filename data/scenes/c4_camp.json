@@ -1,0 +1,100 @@
+{
+  "title": "SCENE_C4_CAMP",
+  "background": "res://art/scenes/c4_camp.png",
+  "placeholder_color": "#8a8a5a",
+  "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
+  "depth_scale": [740, 900, 0.85, 1.0],
+  "lili_start": [260, 830],
+  "entries": {"c4_river": [260, 830]},
+  "hotspots": [
+    {
+      "id": "exit_river",
+      "name": "HS_C4_CAMP_EXIT_RIVER",
+      "polygon": [[0, 350], [190, 350], [190, 880], [0, 880]],
+      "walk_to": [150, 820],
+      "exit": "c4_river"
+    },
+    {
+      "id": "boots",
+      "name": "HS_C4_CAMP_BOOTS",
+      "polygon": [[700, 620], [900, 620], [900, 740], [700, 740]],
+      "walk_to": [800, 800],
+      "interact": [
+        {
+          "once": "got_suitcase_key",
+          "do": [{"give": "suitcase_key"}, {"say": "SAY_BOOT_KEY"}],
+          "else": "SAY_BOOT_DONE"
+        }
+      ],
+      "use": {
+        "footprint_copy": [
+          {
+            "if": "has:magnifier",
+            "then": [{"set": "boots_match"}, {"say": "SAY_BOOTS_MATCH"}],
+            "else": "SAY_BOOTS_NEED_LUPA"
+          }
+        ]
+      }
+    },
+    {
+      "id": "suitcase",
+      "name": "HS_C4_CAMP_SUITCASE",
+      "polygon": [[1000, 580], [1250, 580], [1250, 740], [1000, 740]],
+      "walk_to": [1120, 800],
+      "interact": "SAY_SUITCASE_LOCKED",
+      "use": {
+        "suitcase_key": [
+          {
+            "once": "suitcase_open",
+            "do": [{"give": "fake_beards"}, {"give": "farm_letter"}, {"say": "SAY_SUITCASE_OPEN"}],
+            "else": "SAY_SUITCASE_EMPTY"
+          }
+        ]
+      }
+    },
+    {
+      "id": "poster",
+      "name": "HS_C4_CAMP_POSTER",
+      "polygon": [[1350, 420], [1520, 420], [1520, 640], [1350, 640]],
+      "walk_to": [1420, 790],
+      "interact": [
+        {
+          "once": "poster_read",
+          "do": [{"say": "SAY_POSTER2_1"}, {"say": "SAY_POSTER2_2"}],
+          "else": "SAY_POSTER2_AGAIN"
+        }
+      ]
+    },
+    {
+      "id": "exit_town",
+      "name": "HS_C4_CAMP_EXIT_TOWN",
+      "polygon": [[1730, 350], [1920, 350], [1920, 880], [1730, 880]],
+      "walk_to": [1780, 820],
+      "exit": "c5_town",
+      "exit_if": "boots_match & suitcase_open & poster_read",
+      "blocked": "SAY_NEED_PROOF"
+    }
+  ],
+  "hints": [
+    {
+      "id": "cp_boots",
+      "if": "!boots_match",
+      "keys": ["HINT_CP_BOOTS_1", "HINT_CP_BOOTS_2", "HINT_CP_BOOTS_3"]
+    },
+    {
+      "id": "cp_key",
+      "if": "!has:suitcase_key & !suitcase_open",
+      "keys": ["HINT_CP_KEY_1", "HINT_CP_KEY_2", "HINT_CP_KEY_3"]
+    },
+    {
+      "id": "cp_case",
+      "if": "has:suitcase_key & !suitcase_open",
+      "keys": ["HINT_CP_CASE_1", "HINT_CP_CASE_2", "HINT_CP_CASE_3"]
+    },
+    {
+      "id": "cp_poster",
+      "if": "!poster_read",
+      "keys": ["HINT_CP_POSTER_1", "HINT_CP_POSTER_2", "HINT_CP_POSTER_3"]
+    }
+  ]
+}

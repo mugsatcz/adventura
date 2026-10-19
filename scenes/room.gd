@@ -8,6 +8,8 @@ var data: Dictionary = {}
 var walk: WalkArea
 var lili: Lili
 var _hotspots: Array = []
+var background_path := ""
+var _bg: Sprite2D
 var _placeholder := true
 var _highlight := false
 var _font: Font
@@ -35,9 +37,10 @@ static func centroid(hs: Dictionary) -> Vector2:
 func setup(scene_data: Dictionary, background: Texture2D, foreground: Texture2D, from_scene: String) -> void:
 	data = scene_data
 	_font = ThemeDB.fallback_font
+	background_path = String(data.get("background", ""))
 	if background:
 		_placeholder = false
-		_add_layer(background, -1)
+		_bg = _add_layer(background, -1)
 	if foreground:
 		_add_layer(foreground, 1)
 	walk = WalkArea.new(poly(data.get("walk_area", [])))
@@ -46,6 +49,17 @@ func setup(scene_data: Dictionary, background: Texture2D, foreground: Texture2D,
 	add_child(lili)
 	var entries: Dictionary = data.get("entries", {})
 	lili.place(vec(entries.get(from_scene, data.get("lili_start", [960, 800]))))
+	queue_redraw()
+
+
+## Swaps the background picture (a scene can look different once the story moves on).
+func set_background(texture: Texture2D) -> void:
+	if _bg:
+		_bg.queue_free()
+		_bg = null
+	_placeholder = texture == null
+	if texture:
+		_bg = _add_layer(texture, -1)
 	queue_redraw()
 
 
@@ -73,12 +87,13 @@ func target_for(hs: Dictionary) -> Vector2:
 	return walk.clamp_point(centroid(hs))
 
 
-func _add_layer(texture: Texture2D, z: int) -> void:
+func _add_layer(texture: Texture2D, z: int) -> Sprite2D:
 	var s := Sprite2D.new()
 	s.texture = texture
 	s.centered = false
 	s.z_index = z
 	add_child(s)
+	return s
 
 
 func _draw() -> void:

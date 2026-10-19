@@ -1,0 +1,101 @@
+keys,cs
+UI_GAME_TITLE,Lili a hřebec Hrom
+UI_GAME_SUBTITLE,Dětský western bez násilí
+UI_NEW_GAME,Nová hra
+UI_CONTINUE,Pokračovat
+UI_HINT,Rada
+UI_GOT,Máš: %s
+CHAR_LILI,Lili
+CHAR_JOE,Děda Joe
+CHAR_SHERIFF,Šerif Tom
+FAIL_1,To asi nepůjde.
+FAIL_2,"Hmm, takhle ne."
+FAIL_3,To nedává smysl ani mně.
+FAIL_4,Zkusím něco jiného.
+SAY_CANT_GO,Tudy teď nemůžu.
+HINT_NONE,"Tady máš všechno hotové, Lili. Zkus jít dál."
+ITEM_CARROT,Mrkev
+LOOK_CARROT,Mrkev pro Hroma. Snad mu ji brzy dám.
+ITEM_PITCHFORK,Vidle
+LOOK_PITCHFORK,Dědovy vidle na seno.
+ITEM_WIRE,Drát
+LOOK_WIRE,Ohnutý drát. Tímhle někdo otevřel západku.
+ITEM_HORSESHOE,Stříbrná podkova
+LOOK_HORSESHOE,Stříbrná! Hrom nosí obyčejné železné podkovy. Tahle není jeho.
+ITEM_WHISTLE,Píšťalka
+LOOK_WHISTLE,Dědova píšťalka. Hrom na ni vždycky přiběhne.
+ITEM_NEWSPAPER,Noviny
+LOOK_NEWSPAPER,Inzerát: Velká soutěž o Zlatou podkovu v Red Buffalu!
+ITEM_BUCKET,Vědro
+LOOK_BUCKET,Prázdné vědro.
+ITEM_BUCKET_WATER,Vědro s vodou
+LOOK_BUCKET_WATER,Plné vědro studené vody.
+ITEM_CHARCOAL,Uhlík
+LOOK_CHARCOAL,Vychladlý uhlík. Dá se s ním kreslit.
+ITEM_NEWSPAPER_CHARCOAL,Noviny a uhlík
+LOOK_NEWSPAPER_CHARCOAL,Mám na čem kreslit i čím kreslit.
+ITEM_FOOTPRINT,Obtisk boty
+LOOK_FOOTPRINT,Podrážka s hvězdičkou. Tyhle boty jsou úplně nové.
+SAY_COMBINE_NEWSPAPER_CHARCOAL,"Noviny a uhlík. Teď můžu obkreslit, co budu chtít."
+SCENE_C1_STABLE,Prázdná stáj
+CUT_C1_INTRO_CAPTION,"Silver Creek, brzy ráno"
+CUT_C1_INTRO_1,Lili vstala jako první. V ruce nesla mrkev pro svého hřebce Hroma.
+CUT_C1_INTRO_2,"Dobré ráno, Hrome! Mám pro tebe snídani!"
+CUT_C1_INTRO_3,Hrome?! Stáj je prázdná! Kde jsi?
+HS_EXIT_YARD,Na dvůr
+HS_HAY,Seno
+SAY_HAY_HANDS,"Něco se v seně leskne. Holýma rukama to ale nevyhrabu, je ho tu strašně moc."
+SAY_HAY_FOUND,Podkova! A stříbrná!
+SAY_HAY_EMPTY,Víc už tam nic není.
+HS_PITCHFORK,Vidle
+SAY_TAKE_PITCHFORK,Dědovy vidle. Ty se budou hodit.
+HS_LATCH,Dveře stáje
+SAY_LATCH,Západku někdo otevřel zvenku. Tímhle drátem! Vezmu si ho.
+SAY_LATCH_DONE,"Zloději otevřeli dveře drátem. Chytré, ale ne dost."
+HS_PRINTS,Otisky bot
+LOOK_PRINTS,Otisky bot s hvězdičkou na podrážce. Musím si je obkreslit.
+SAY_PRINTS_NEED_PEN,Na noviny se kreslit dá. Ale čím?
+SAY_PRINTS_NEED_PAPER,Kreslit uhlíkem do bláta? To by nešlo.
+SAY_PRINTS_DONE,Hotovo! Mám přesný obtisk podrážky.
+SAY_PRINTS_HAVE,Obtisk už mám.
+HINT_HAY_1,"V tom seně se něco lesklo, viď?"
+HINT_HAY_2,Rukama seno nepřehrabeš. Hledej nějaký nástroj.
+HINT_HAY_3,Vezmi vidle u stěny a přetáhni je na seno.
+HINT_PRINTS_1,Ty otisky bot jsou důležitý důkaz.
+HINT_PRINTS_2,Na obkreslení potřebuješ papír a něco na kreslení. Zkus to na dvoře.
+HINT_PRINTS_3,Děda má noviny a v ohništi jsou uhlíky. Spoj je a použij na otisky.
+SCENE_C1_YARD,Dvůr ranče
+HS_EXIT_STABLE,Do stáje
+HS_EXIT_TOWN,Do města
+SAY_TOWN_LATER,"Do města zajdu, až budu mít nějaké stopy."
+HS_JOE,Děda Joe
+HS_WELL,Studna
+LOOK_WELL,Stará studna. Voda je ledová.
+SAY_WELL_FILL,Načerpala jsem plné vědro.
+SAY_WELL_FULL,Vědro už je plné.
+HS_BUCKET,Vědro
+SAY_TAKE_BUCKET,Vědro. Vezmu si ho.
+HS_FIRE,Ohniště
+SAY_FIRE_HOT,Au! Uhlíky ještě žhnou. Holou rukou si je nevezmu.
+SAY_FIRE_DOUSE,Pššššš! Uhlíky vychladly.
+SAY_FIRE_ALREADY_OUT,Oheň už je uhašený.
+SAY_FIRE_EMPTY_BUCKET,Prázdné vědro oheň neuhasí.
+SAY_FIRE_TAKE,Jeden pěkný uhlík si vezmu.
+SAY_FIRE_DONE,Jeden uhlík mi stačí.
+DLG_JOE_HI,"Dobré ráno, Lili! Co tak brzo vzhůru?"
+DLG_JOE_OPT_HROM,"Dědo, Hrom zmizel!"
+DLG_JOE_HROM,Cože? Ze zavřené stáje? To byl někdo šikovný.
+DLG_JOE_GIFTS,"Vezmi si moji starou píšťalku, Hrom na ni vždycky přiběhne. A noviny si vezmi taky, třeba se budou hodit."
+DLG_JOE_OPT_PAPER,Co je nového v novinách?
+DLG_JOE_PAPER,V Red Buffalu bude velká soutěž koní o Zlatou podkovu. Vítěz dostane hromadu peněz.
+DLG_JOE_OPT_BYE,"Musím běžet, dědo."
+DLG_JOE_BYE,"Dávej na sebe pozor, holčičko."
+HINT_JOE_1,Děda vždycky poradí. Promluv si s ním.
+HINT_JOE_2,"Řekni dědovi, co se stalo s Hromem."
+HINT_JOE_3,"Ťukni na dědu a vyber: Dědo, Hrom zmizel!"
+HINT_COAL_1,Uhlík se hodí na kreslení. Jenže je horký.
+HINT_COAL_2,Horké uhlíky se dají uhasit vodou.
+HINT_COAL_3,Naplň vědro ve studni a vylij ho na ohniště.
+HINT_COMBINE_1,Máš papír i uhlík. Co kdybys je spojila?
+HINT_COMBINE_2,Přetáhni v inventáři uhlík na noviny.
+HINT_COMBINE_3,Pak jdi do stáje a použij je na otisky bot.

@@ -1,0 +1,27 @@
+{
+  "items": {
+    "carrot": {"name": "ITEM_CARROT", "look": "LOOK_CARROT", "color": "#d9772b", "icon": "res://art/items/carrot.png"},
+    "pitchfork": {"name": "ITEM_PITCHFORK", "look": "LOOK_PITCHFORK", "color": "#8b6b47", "icon": "res://art/items/pitchfork.png"},
+    "wire": {"name": "ITEM_WIRE", "look": "LOOK_WIRE", "color": "#7d8790", "icon": "res://art/items/wire.png"},
+    "silver_horseshoe": {"name": "ITEM_HORSESHOE", "look": "LOOK_HORSESHOE", "color": "#a9b4bf", "icon": "res://art/items/silver_horseshoe.png"},
+    "whistle": {"name": "ITEM_WHISTLE", "look": "LOOK_WHISTLE", "color": "#b0894f", "icon": "res://art/items/whistle.png"},
+    "newspaper": {"name": "ITEM_NEWSPAPER", "look": "LOOK_NEWSPAPER", "color": "#cfc6b0", "icon": "res://art/items/newspaper.png"},
+    "bucket": {"name": "ITEM_BUCKET", "look": "LOOK_BUCKET", "color": "#6f6a62", "icon": "res://art/items/bucket.png"},
+    "bucket_water": {"name": "ITEM_BUCKET_WATER", "look": "LOOK_BUCKET_WATER", "color": "#4f86b0", "icon": "res://art/items/bucket_water.png"},
+    "charcoal": {"name": "ITEM_CHARCOAL", "look": "LOOK_CHARCOAL", "color": "#3a3632", "icon": "res://art/items/charcoal.png"},
+    "newspaper_charcoal": {"name": "ITEM_NEWSPAPER_CHARCOAL", "look": "LOOK_NEWSPAPER_CHARCOAL", "color": "#9c9484", "icon": "res://art/items/newspaper_charcoal.png"},
+    "footprint_copy": {"name": "ITEM_FOOTPRINT", "look": "LOOK_FOOTPRINT", "color": "#bfae8a", "icon": "res://art/items/footprint_copy.png"}
+  },
+  "combos": [
+    {
+      "a": "newspaper",
+      "b": "charcoal",
+      "do": [
+        {"take": "newspaper"},
+        {"take": "charcoal"},
+        {"give": "newspaper_charcoal"},
+        {"say": "SAY_COMBINE_NEWSPAPER_CHARCOAL"}
+      ]
+    }
+  ]
+}

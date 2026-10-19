@@ -1,0 +1,103 @@
+{
+  "title": "SCENE_C1_YARD",
+  "background": "res://art/scenes/c1_yard.png",
+  "placeholder_color": "#a8844a",
+  "walk_area": [[60, 730], [1860, 730], [1880, 900], [40, 900]],
+  "depth_scale": [730, 900, 0.85, 1.0],
+  "lili_start": [1650, 820],
+  "entries": {"c1_stable": [1650, 820]},
+  "hotspots": [
+    {
+      "id": "exit_stable",
+      "name": "HS_EXIT_STABLE",
+      "polygon": [[1700, 350], [1900, 350], [1900, 850], [1700, 850]],
+      "walk_to": [1780, 820],
+      "exit": "c1_stable"
+    },
+    {
+      "id": "exit_town",
+      "name": "HS_EXIT_TOWN",
+      "polygon": [[0, 350], [200, 350], [200, 850], [0, 850]],
+      "walk_to": [140, 820],
+      "interact": "SAY_TOWN_LATER"
+    },
+    {
+      "id": "grandpa",
+      "name": "HS_JOE",
+      "polygon": [[1300, 420], [1480, 420], [1480, 720], [1300, 720]],
+      "walk_to": [1250, 790],
+      "interact": [{"dialogue": "joe"}]
+    },
+    {
+      "id": "well",
+      "name": "HS_WELL",
+      "polygon": [[300, 450], [520, 450], [520, 700], [300, 700]],
+      "walk_to": [420, 770],
+      "interact": "LOOK_WELL",
+      "use": {
+        "bucket": [{"take": "bucket"}, {"give": "bucket_water"}, {"say": "SAY_WELL_FILL"}],
+        "bucket_water": "SAY_WELL_FULL"
+      }
+    },
+    {
+      "id": "bucket",
+      "name": "HS_BUCKET",
+      "if": "!took_bucket",
+      "polygon": [[560, 610], [660, 610], [660, 700], [560, 700]],
+      "walk_to": [610, 770],
+      "interact": [{"set": "took_bucket"}, {"give": "bucket"}, {"say": "SAY_TAKE_BUCKET"}]
+    },
+    {
+      "id": "fire",
+      "name": "HS_FIRE",
+      "polygon": [[800, 610], [1060, 610], [1060, 720], [800, 720]],
+      "walk_to": [930, 790],
+      "interact": [
+        {"if": "!fire_out", "then": "SAY_FIRE_HOT", "else": [
+          {"once": "got_charcoal", "do": [{"give": "charcoal"}, {"say": "SAY_FIRE_TAKE"}], "else": "SAY_FIRE_DONE"}
+        ]}
+      ],
+      "use": {
+        "bucket_water": [
+          {"if": "fire_out", "then": "SAY_FIRE_ALREADY_OUT", "else": [
+            {"take": "bucket_water"},
+            {"give": "bucket"},
+            {"set": "fire_out"},
+            {"say": "SAY_FIRE_DOUSE"}
+          ]}
+        ],
+        "bucket": "SAY_FIRE_EMPTY_BUCKET"
+      }
+    }
+  ],
+  "dialogues": {
+    "joe": {
+      "start": "hi",
+      "nodes": {
+        "hi": {
+          "who": "joe",
+          "text": "DLG_JOE_HI",
+          "options": [
+            {"text": "DLG_JOE_OPT_HROM", "if": "!joe_told", "next": "hrom"},
+            {"text": "DLG_JOE_OPT_PAPER", "next": "paper"},
+            {"text": "DLG_JOE_OPT_BYE", "next": "bye"}
+          ]
+        },
+        "hrom": {"who": "joe", "text": "DLG_JOE_HROM", "next": "gifts"},
+        "gifts": {
+          "who": "joe",
+          "text": "DLG_JOE_GIFTS",
+          "do": [{"set": "joe_told"}, {"give": "whistle"}, {"give": "newspaper"}],
+          "next": "hi"
+        },
+        "paper": {"who": "joe", "text": "DLG_JOE_PAPER", "next": "hi"},
+        "bye": {"who": "joe", "text": "DLG_JOE_BYE"}
+      }
+    }
+  },
+  "hints": [
+    {"id": "joe", "if": "!joe_told", "keys": ["HINT_JOE_1", "HINT_JOE_2", "HINT_JOE_3"]},
+    {"id": "coal", "if": "!has:charcoal & !has:newspaper_charcoal & !has:footprint_copy", "keys": ["HINT_COAL_1", "HINT_COAL_2", "HINT_COAL_3"]},
+    {"id": "combine", "if": "has:charcoal & has:newspaper", "keys": ["HINT_COMBINE_1", "HINT_COMBINE_2", "HINT_COMBINE_3"]}
+  ]
+}

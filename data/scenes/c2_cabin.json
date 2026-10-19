@@ -11,7 +11,7 @@
     {
       "id": "exit_crossroads",
       "name": "HS_EXIT_CROSSROADS",
-      "polygon": [[0, 70], [330, 70], [330, 780], [0, 780]],
+      "polygon": [[0, 70], [330, 70], [330, 560], [500, 560], [500, 800], [0, 800]],
       "walk_to": [260, 830],
       "exit": "c2_crossroads"
     },
@@ -19,16 +19,16 @@
       "id": "barrel",
       "name": "HS_BARREL",
       "if": "!cabin_inside & !barrel_moved",
-      "polygon": [[300, 560], [480, 560], [480, 740], [300, 740]],
-      "walk_to": [400, 800],
+      "polygon": [[735, 495], [875, 495], [875, 610], [735, 610]],
+      "walk_to": [800, 800],
       "interact": [{"set": "barrel_moved"}, {"say": "SAY_BARREL_MOVE"}]
     },
     {
       "id": "window",
       "name": "HS_WINDOW",
       "if": "!cabin_inside",
-      "polygon": [[800, 380], [1060, 380], [1060, 560], [800, 560]],
-      "walk_to": [930, 800],
+      "polygon": [[985, 350], [1160, 350], [1160, 535], [985, 535]],
+      "walk_to": [1070, 800],
       "interact": [
         {"if": "barrel_moved", "then": [{"set": "cabin_inside"}, {"say": "SAY_WINDOW_IN"}], "else": "SAY_WINDOW_HIGH"}
       ]
@@ -37,8 +37,8 @@
       "id": "door",
       "name": "HS_DOOR",
       "if": "!cabin_inside",
-      "polygon": [[1250, 420], [1450, 420], [1450, 740], [1250, 740]],
-      "walk_to": [1350, 800],
+      "polygon": [[1200, 330], [1375, 330], [1375, 600], [1200, 600]],
+      "walk_to": [1300, 790],
       "interact": "SAY_DOOR_LOCKED"
     },
     {

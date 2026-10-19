@@ -22,15 +22,15 @@
     {
       "id": "exit_yard",
       "name": "HS_EXIT_YARD",
-      "polygon": [[0, 300], [180, 300], [180, 880], [0, 880]],
-      "walk_to": [120, 820],
+      "polygon": [[0, 200], [300, 200], [300, 880], [0, 880]],
+      "walk_to": [160, 820],
       "exit": "c1_yard"
     },
     {
       "id": "hay",
       "name": "HS_HAY",
-      "polygon": [[1250, 420], [1700, 420], [1760, 700], [1200, 700]],
-      "walk_to": [1300, 780],
+      "polygon": [[1450, 400], [1880, 400], [1880, 690], [1450, 690]],
+      "walk_to": [1400, 780],
       "interact": [
         {"if": "got_horseshoe", "then": "SAY_HAY_EMPTY", "else": "SAY_HAY_HANDS"}
       ],
@@ -44,15 +44,15 @@
       "id": "pitchfork",
       "name": "HS_PITCHFORK",
       "if": "!took_pitchfork",
-      "polygon": [[1000, 330], [1070, 330], [1070, 700], [1000, 700]],
-      "walk_to": [1030, 760],
+      "polygon": [[300, 250], [420, 250], [420, 560], [300, 560]],
+      "walk_to": [380, 780],
       "interact": [{"set": "took_pitchfork"}, {"give": "pitchfork"}, {"say": "SAY_TAKE_PITCHFORK"}]
     },
     {
       "id": "latch",
       "name": "HS_LATCH",
-      "polygon": [[420, 330], [640, 330], [640, 700], [420, 700]],
-      "walk_to": [530, 760],
+      "polygon": [[1060, 410], [1220, 410], [1220, 500], [1060, 500]],
+      "walk_to": [1140, 780],
       "interact": [
         {"once": "got_wire", "do": [{"give": "wire"}, {"say": "SAY_LATCH"}], "else": "SAY_LATCH_DONE"}
       ]

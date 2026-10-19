@@ -1,0 +1,83 @@
+{
+  "title": "SCENE_C1_STABLE",
+  "background": "res://art/scenes/c1_stable.png",
+  "placeholder_color": "#6b4a2b",
+  "walk_area": [[150, 720], [1780, 720], [1860, 900], [60, 900]],
+  "depth_scale": [720, 900, 0.85, 1.0],
+  "lili_start": [700, 800],
+  "entries": {"c1_yard": [160, 820]},
+  "on_enter": [
+    {"once": "c1_intro_seen", "do": [{"cutscene": "intro"}]}
+  ],
+  "cutscenes": {
+    "intro": [
+      {"image": "res://art/cutscenes/c1_intro.png", "color": "#f3b562", "caption": "CUT_C1_INTRO_CAPTION"},
+      {"say": "CUT_C1_INTRO_1", "who": "narrator"},
+      {"say": "CUT_C1_INTRO_2", "who": "lili"},
+      {"image_clear": true},
+      {"say": "CUT_C1_INTRO_3", "who": "lili"}
+    ]
+  },
+  "hotspots": [
+    {
+      "id": "exit_yard",
+      "name": "HS_EXIT_YARD",
+      "polygon": [[0, 300], [180, 300], [180, 880], [0, 880]],
+      "walk_to": [120, 820],
+      "exit": "c1_yard"
+    },
+    {
+      "id": "hay",
+      "name": "HS_HAY",
+      "polygon": [[1250, 420], [1700, 420], [1760, 700], [1200, 700]],
+      "walk_to": [1300, 780],
+      "interact": [
+        {"if": "got_horseshoe", "then": "SAY_HAY_EMPTY", "else": "SAY_HAY_HANDS"}
+      ],
+      "use": {
+        "pitchfork": [
+          {"once": "got_horseshoe", "do": [{"give": "silver_horseshoe"}, {"say": "SAY_HAY_FOUND"}], "else": "SAY_HAY_EMPTY"}
+        ]
+      }
+    },
+    {
+      "id": "pitchfork",
+      "name": "HS_PITCHFORK",
+      "if": "!took_pitchfork",
+      "polygon": [[1000, 330], [1070, 330], [1070, 700], [1000, 700]],
+      "walk_to": [1030, 760],
+      "interact": [{"set": "took_pitchfork"}, {"give": "pitchfork"}, {"say": "SAY_TAKE_PITCHFORK"}]
+    },
+    {
+      "id": "latch",
+      "name": "HS_LATCH",
+      "polygon": [[420, 330], [640, 330], [640, 700], [420, 700]],
+      "walk_to": [530, 760],
+      "interact": [
+        {"once": "got_wire", "do": [{"give": "wire"}, {"say": "SAY_LATCH"}], "else": "SAY_LATCH_DONE"}
+      ]
+    },
+    {
+      "id": "footprints",
+      "name": "HS_PRINTS",
+      "polygon": [[720, 800], [1000, 800], [1000, 880], [720, 880]],
+      "walk_to": [660, 840],
+      "interact": [
+        {"if": "has:footprint_copy", "then": "SAY_PRINTS_HAVE", "else": "LOOK_PRINTS"}
+      ],
+      "use": {
+        "newspaper_charcoal": [
+          {"take": "newspaper_charcoal"},
+          {"give": "footprint_copy"},
+          {"say": "SAY_PRINTS_DONE"}
+        ],
+        "newspaper": "SAY_PRINTS_NEED_PEN",
+        "charcoal": "SAY_PRINTS_NEED_PAPER"
+      }
+    }
+  ],
+  "hints": [
+    {"id": "hay", "if": "!got_horseshoe", "keys": ["HINT_HAY_1", "HINT_HAY_2", "HINT_HAY_3"]},
+    {"id": "prints", "if": "!has:footprint_copy", "keys": ["HINT_PRINTS_1", "HINT_PRINTS_2", "HINT_PRINTS_3"]}
+  ]
+}

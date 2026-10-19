@@ -1,0 +1,6 @@
+{
+  "lili": {"name": "CHAR_LILI", "color": "#ffcf6e", "pitch": 340},
+  "joe": {"name": "CHAR_JOE", "color": "#9ad0ff", "pitch": 130},
+  "sheriff": {"name": "CHAR_SHERIFF", "color": "#ffa36e", "pitch": 110},
+  "narrator": {"color": "#ffffff", "pitch": 0}
+}

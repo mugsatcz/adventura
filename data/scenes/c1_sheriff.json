@@ -10,15 +10,15 @@
     {
       "id": "exit_street",
       "name": "HS_EXIT_STREET",
-      "polygon": [[0, 300], [170, 300], [170, 880], [0, 880]],
+      "polygon": [[0, 70], [300, 70], [300, 780], [0, 780]],
       "walk_to": [220, 830],
       "exit": "c1_street"
     },
     {
       "id": "tom",
       "name": "HS_TOM",
-      "polygon": [[1050, 400], [1250, 400], [1250, 740], [1050, 740]],
-      "walk_to": [1000, 800],
+      "polygon": [[1240, 340], [1480, 340], [1480, 830], [1240, 830]],
+      "walk_to": [1160, 840],
       "interact": [{"dialogue": "tom"}],
       "use": {
         "silver_horseshoe": [

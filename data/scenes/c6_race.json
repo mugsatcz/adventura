@@ -1,0 +1,36 @@
+{
+  "title": "SCENE_C6_RACE",
+  "background": "res://art/scenes/c6_race.png",
+  "placeholder_color": "#c8d27a",
+  "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
+  "depth_scale": [740, 900, 0.85, 1.0],
+  "lili_start": [200, 820],
+  "entries": {"c6_grounds": [200, 820]},
+  "on_enter": [{"once": "race_won", "do": [{"cutscene": "race"}]}],
+  "cutscenes": {
+    "race": [
+      {
+        "image": "res://art/cutscenes/c6_race.png",
+        "color": "#e8d27a",
+        "caption": "CUT_C6_RACE_CAPTION"
+      },
+      {"say": "CUT_C6_RACE_1", "who": "narrator"},
+      {"say": "CUT_C6_RACE_2", "who": "mayor"},
+      {"say": "CUT_C6_RACE_3", "who": "cylindr"},
+      {"give": "golden_horseshoe"},
+      {"give": "new_blanket"},
+      {"image_clear": true},
+      {"goto": "c7_home"}
+    ]
+  },
+  "hotspots": [
+    {
+      "id": "track",
+      "name": "HS_C6_RACE_TRACK",
+      "polygon": [[600, 560], [1400, 560], [1400, 740], [600, 740]],
+      "walk_to": [900, 800],
+      "interact": "SAY_R_TRACK"
+    }
+  ],
+  "hints": [{"id": "ra_go", "if": "true", "keys": ["HINT_RA_GO_1", "HINT_RA_GO_2", "HINT_RA_GO_3"]}]
+}

@@ -1,0 +1,81 @@
+{
+  "title": "SCENE_C3_CATTLE",
+  "background": "res://art/scenes/c3_cattle.png",
+  "placeholder_color": "#8a6b4c",
+  "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
+  "depth_scale": [740, 900, 0.85, 1.0],
+  "lili_start": [260, 830],
+  "entries": {"c3_coach": [260, 830]},
+  "cutscenes": {
+    "peek": [
+      {
+        "image": "res://art/cutscenes/c3_peek.png",
+        "color": "#9cb4a0",
+        "caption": "CUT_C3_PEEK_CAPTION"
+      },
+      {"say": "CUT_C3_PEEK_1", "who": "narrator"},
+      {"say": "CUT_C3_PEEK_2", "who": "lili"},
+      {"image_clear": true}
+    ]
+  },
+  "hotspots": [
+    {
+      "id": "exit_coach",
+      "name": "HS_C3_CATTLE_EXIT_COACH",
+      "polygon": [[0, 350], [190, 350], [190, 880], [0, 880]],
+      "walk_to": [150, 820],
+      "exit": "c3_coach"
+    },
+    {
+      "id": "crack",
+      "name": "HS_C3_CATTLE_CRACK",
+      "polygon": [[1000, 400], [1160, 400], [1160, 560], [1000, 560]],
+      "walk_to": [1080, 800],
+      "interact": [{"once": "peeked", "do": [{"cutscene": "peek"}], "else": "SAY_CRACK_AGAIN"}]
+    },
+    {
+      "id": "crate",
+      "name": "HS_C3_CATTLE_CRATE",
+      "polygon": [[500, 560], [780, 560], [780, 740], [500, 740]],
+      "walk_to": [640, 800],
+      "interact": [{"once": "crate_moved", "do": [{"say": "SAY_CRATE_MOVE"}], "else": "SAY_CRATE_DONE"}]
+    },
+    {
+      "id": "hook",
+      "name": "HS_C3_CATTLE_HOOK",
+      "if": "peeked",
+      "polygon": [[1350, 380], [1500, 380], [1500, 520], [1350, 520]],
+      "walk_to": [1420, 800],
+      "interact": [
+        {
+          "if": "crate_moved",
+          "then": [
+            {
+              "once": "got_halter",
+              "do": [
+                {"give": "halter"},
+                {"say": "SAY_HALTER_NOTE"},
+                {"say": "SAY_TRAIN_ARRIVES", "who": "pepik"},
+                {"goto": "c4_village"}
+              ],
+              "else": "SAY_HOOK_DONE"
+            }
+          ],
+          "else": "SAY_HOOK_HIGH"
+        }
+      ]
+    }
+  ],
+  "hints": [
+    {
+      "id": "ca_peek",
+      "if": "!peeked",
+      "keys": ["HINT_CA_PEEK_1", "HINT_CA_PEEK_2", "HINT_CA_PEEK_3"]
+    },
+    {
+      "id": "ca_hook",
+      "if": "peeked & !got_halter",
+      "keys": ["HINT_CA_HOOK_1", "HINT_CA_HOOK_2", "HINT_CA_HOOK_3"]
+    }
+  ]
+}

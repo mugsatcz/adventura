@@ -16,7 +16,25 @@
     "magnifier": {"name": "ITEM_MAGNIFIER", "look": "LOOK_MAGNIFIER", "color": "#b9c4cc", "icon": "res://art/items/magnifier.png"},
     "dry_branch": {"name": "ITEM_BRANCH", "look": "LOOK_BRANCH", "color": "#8a6a3e", "icon": "res://art/items/dry_branch.png"},
     "timetable_note": {"name": "ITEM_NOTE", "look": "LOOK_NOTE", "color": "#d8c9a0", "icon": "res://art/items/timetable_note.png"},
-    "county_map": {"name": "ITEM_MAP", "look": "LOOK_MAP", "color": "#c8b27a", "icon": "res://art/items/county_map.png"}
+    "county_map": {"name": "ITEM_MAP", "look": "LOOK_MAP", "color": "#c8b27a", "icon": "res://art/items/county_map.png"},
+    "halter": {"name": "ITEM_HALTER", "look": "LOOK_HALTER", "color": "#8b5a2b", "icon": "res://art/items/halter.png"},
+    "hromova_deka": {"name": "ITEM_HROMOVA_DEKA", "look": "LOOK_HROMOVA_DEKA", "color": "#b5542f", "icon": "res://art/items/hromova_deka.png"},
+    "map_scrap": {"name": "ITEM_MAP_SCRAP", "look": "LOOK_MAP_SCRAP", "color": "#cdbd94", "icon": "res://art/items/map_scrap.png"},
+    "glasses": {"name": "ITEM_GLASSES", "look": "LOOK_GLASSES", "color": "#9aa5ad", "icon": "res://art/items/glasses.png"},
+    "tickets": {"name": "ITEM_TICKETS", "look": "LOOK_TICKETS", "color": "#d9c58a", "icon": "res://art/items/tickets.png"},
+    "biscuit": {"name": "ITEM_BISCUIT", "look": "LOOK_BISCUIT", "color": "#d6a35c", "icon": "res://art/items/biscuit.png"},
+    "hard_pitch": {"name": "ITEM_HARD_PITCH", "look": "LOOK_HARD_PITCH", "color": "#2f2a26", "icon": "res://art/items/hard_pitch.png"},
+    "warm_pitch": {"name": "ITEM_WARM_PITCH", "look": "LOOK_WARM_PITCH", "color": "#4a3b2c", "icon": "res://art/items/warm_pitch.png"},
+    "paddle": {"name": "ITEM_PADDLE", "look": "LOOK_PADDLE", "color": "#a07a4a", "icon": "res://art/items/paddle.png"},
+    "suitcase_key": {"name": "ITEM_SUITCASE_KEY", "look": "LOOK_SUITCASE_KEY", "color": "#b0a070", "icon": "res://art/items/suitcase_key.png"},
+    "fake_beards": {"name": "ITEM_FAKE_BEARDS", "look": "LOOK_FAKE_BEARDS", "color": "#6b5b4b", "icon": "res://art/items/fake_beards.png"},
+    "farm_letter": {"name": "ITEM_FARM_LETTER", "look": "LOOK_FARM_LETTER", "color": "#d9d0b0", "icon": "res://art/items/farm_letter.png"},
+    "ring": {"name": "ITEM_RING", "look": "LOOK_RING", "color": "#e0b84a", "icon": "res://art/items/ring.png"},
+    "soap": {"name": "ITEM_SOAP", "look": "LOOK_SOAP", "color": "#e8d8e8", "icon": "res://art/items/soap.png"},
+    "soapy_water": {"name": "ITEM_SOAPY_WATER", "look": "LOOK_SOAPY_WATER", "color": "#9ac8e0", "icon": "res://art/items/soapy_water.png"},
+    "saddle": {"name": "ITEM_SADDLE", "look": "LOOK_SADDLE", "color": "#7a4a2a", "icon": "res://art/items/saddle.png"},
+    "golden_horseshoe": {"name": "ITEM_GOLDEN_HORSESHOE", "look": "LOOK_GOLDEN_HORSESHOE", "color": "#f0c850", "icon": "res://art/items/golden_horseshoe.png"},
+    "new_blanket": {"name": "ITEM_NEW_BLANKET", "look": "LOOK_NEW_BLANKET", "color": "#c06a5a", "icon": "res://art/items/new_blanket.png"}
   },
   "combos": [
     {
@@ -27,6 +45,16 @@
         {"take": "charcoal"},
         {"give": "newspaper_charcoal"},
         {"say": "SAY_COMBINE_NEWSPAPER_CHARCOAL"}
+      ]
+    },
+    {
+      "a": "soap",
+      "b": "bucket_water",
+      "do": [
+        {"take": "soap"},
+        {"take": "bucket_water"},
+        {"give": "soapy_water"},
+        {"say": "SAY_COMBINE_SOAPY"}
       ]
     }
   ]

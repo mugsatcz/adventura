@@ -1,0 +1,93 @@
+{
+  "title": "SCENE_C5_STABLE",
+  "background": "res://art/scenes/c5_stable.png",
+  "placeholder_color": "#a07a56",
+  "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
+  "depth_scale": [740, 900, 0.85, 1.0],
+  "lili_start": [200, 820],
+  "entries": {"c5_town": [200, 820]},
+  "cutscenes": {
+    "whistle": [
+      {
+        "image": "res://art/cutscenes/c5_whistle.png",
+        "color": "#e0b070",
+        "caption": "CUT_C5_WHISTLE_CAPTION"
+      },
+      {"say": "CUT_C5_WHISTLE_1", "who": "narrator"},
+      {"say": "CUT_C5_WHISTLE_2", "who": "cylindr"},
+      {"say": "CUT_C5_WHISTLE_3", "who": "sheriff"},
+      {"image_clear": true},
+      {"goto": "c6_grounds"}
+    ]
+  },
+  "hotspots": [
+    {
+      "id": "exit_town",
+      "name": "HS_C5_STABLE_EXIT_TOWN",
+      "polygon": [[0, 350], [190, 350], [190, 880], [0, 880]],
+      "walk_to": [150, 820],
+      "exit": "c5_town"
+    },
+    {
+      "id": "trough",
+      "name": "HS_C5_STABLE_TROUGH",
+      "polygon": [[500, 640], [800, 640], [800, 740], [500, 740]],
+      "walk_to": [650, 800],
+      "interact": "SAY_TROUGH_LOOK",
+      "use": {"bucket": [{"take": "bucket"}, {"give": "bucket_water"}, {"say": "SAY_TROUGH_FILL"}]}
+    },
+    {
+      "id": "hooves",
+      "name": "HS_C5_STABLE_HOOVES",
+      "polygon": [[1050, 640], [1300, 640], [1300, 740], [1050, 740]],
+      "walk_to": [1180, 800],
+      "interact": [{"set": "hoof_checked"}, {"say": "SAY_HOOVES"}]
+    },
+    {
+      "id": "hrom",
+      "name": "HS_C5_STABLE_HROM",
+      "polygon": [[1250, 400], [1600, 400], [1600, 740], [1250, 740]],
+      "walk_to": [1180, 800],
+      "interact": [{"if": "hrom_calm", "then": "SAY_HROM_CALM", "else": "SAY_HROM_WILD"}],
+      "use": {
+        "hromova_deka": [{"set": "hrom_calm"}, {"say": "SAY_HROM_BLANKET"}],
+        "soapy_water": [
+          {
+            "if": "hrom_calm",
+            "then": [{"take": "soapy_water"}, {"give": "bucket"}, {"set": "hrom_washed"}, {"say": "SAY_HROM_WASH"}],
+            "else": "SAY_HROM_NOT_CALM"
+          }
+        ],
+        "whistle": [
+          {
+            "if": "hrom_washed & confronted",
+            "then": [{"cutscene": "whistle"}],
+            "else": "SAY_WHISTLE_NOT_YET"
+          }
+        ]
+      }
+    }
+  ],
+  "hints": [
+    {
+      "id": "st_water",
+      "if": "!has:bucket_water & !has:soapy_water & !hrom_washed",
+      "keys": ["HINT_ST_WATER_1", "HINT_ST_WATER_2", "HINT_ST_WATER_3"]
+    },
+    {
+      "id": "st_calm",
+      "if": "!hrom_calm",
+      "keys": ["HINT_ST_CALM_1", "HINT_ST_CALM_2", "HINT_ST_CALM_3"]
+    },
+    {
+      "id": "st_soap",
+      "if": "hrom_calm & !hrom_washed",
+      "keys": ["HINT_ST_SOAP_1", "HINT_ST_SOAP_2", "HINT_ST_SOAP_3"]
+    },
+    {
+      "id": "st_whistle",
+      "if": "hrom_washed",
+      "keys": ["HINT_ST_WHISTLE_1", "HINT_ST_WHISTLE_2", "HINT_ST_WHISTLE_3"]
+    }
+  ]
+}

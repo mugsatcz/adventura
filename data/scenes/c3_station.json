@@ -1,0 +1,49 @@
+{
+  "title": "SCENE_C3_STATION",
+  "background": "res://art/scenes/c3_station.png",
+  "placeholder_color": "#c9d6df",
+  "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
+  "depth_scale": [740, 900, 0.85, 1.0],
+  "lili_start": [900, 820],
+  "entries": {},
+  "on_enter": [{"once": "c3_intro_seen", "do": [{"cutscene": "arrival"}]}],
+  "cutscenes": {
+    "arrival": [
+      {
+        "image": "res://art/cutscenes/c3_arrival.png",
+        "color": "#c9d6df",
+        "caption": "CUT_C3_ARRIVAL_CAPTION"
+      },
+      {"say": "CUT_C3_ARRIVAL_1", "who": "narrator"},
+      {"say": "CUT_C3_ARRIVAL_2", "who": "lili"},
+      {"image_clear": true}
+    ],
+    "departure": [
+      {
+        "image": "res://art/cutscenes/c3_departure.png",
+        "color": "#d8c7a1",
+        "caption": "CUT_C3_DEP_CAPTION"
+      },
+      {"say": "CUT_C3_DEP_1", "who": "sheriff"},
+      {"say": "CUT_C3_DEP_2", "who": "lili"},
+      {"image_clear": true}
+    ]
+  },
+  "hotspots": [
+    {
+      "id": "cart",
+      "name": "HS_C3_STATION_CART",
+      "polygon": [[1100, 520], [1420, 520], [1420, 740], [1100, 740]],
+      "walk_to": [1000, 800],
+      "interact": [{"say": "SAY_CART_PUSH"}, {"cutscene": "departure"}, {"goto": "c3_platform"}]
+    },
+    {
+      "id": "train",
+      "name": "HS_C3_STATION_TRAIN",
+      "polygon": [[300, 380], [900, 380], [900, 700], [300, 700]],
+      "walk_to": [600, 800],
+      "interact": "SAY_STATION_TRAIN"
+    }
+  ],
+  "hints": [{"id": "st_cart", "if": "true", "keys": ["HINT_ST_1", "HINT_ST_2", "HINT_ST_3"]}]
+}

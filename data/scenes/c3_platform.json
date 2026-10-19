@@ -1,0 +1,41 @@
+{
+  "title": "SCENE_C3_PLATFORM",
+  "background": "res://art/scenes/c3_platform.png",
+  "placeholder_color": "#8fa3b3",
+  "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
+  "depth_scale": [740, 900, 0.85, 1.0],
+  "lili_start": [300, 830],
+  "entries": {"c3_station": [300, 830], "c3_coach": [1560, 830]},
+  "hotspots": [
+    {
+      "id": "blanket",
+      "name": "HS_C3_PLATFORM_BLANKET",
+      "polygon": [[700, 430], [960, 430], [960, 640], [700, 640]],
+      "walk_to": [830, 790],
+      "interact": [
+        {
+          "once": "got_deka",
+          "do": [{"give": "hromova_deka"}, {"say": "SAY_DEKA_TAKE"}],
+          "else": "SAY_DEKA_DONE"
+        }
+      ]
+    },
+    {
+      "id": "exit_coach",
+      "name": "HS_C3_PLATFORM_EXIT_COACH",
+      "polygon": [[1300, 380], [1560, 380], [1560, 740], [1300, 740]],
+      "walk_to": [1430, 800],
+      "exit": "c3_coach",
+      "exit_if": "door_open",
+      "blocked": "SAY_COACH_DOOR_LOCKED",
+      "use": {"wire": [{"set": "door_open"}, {"say": "SAY_COACH_DOOR_PICK"}]}
+    }
+  ],
+  "hints": [
+    {
+      "id": "pl_door",
+      "if": "!door_open",
+      "keys": ["HINT_PL_DOOR_1", "HINT_PL_DOOR_2", "HINT_PL_DOOR_3"]
+    }
+  ]
+}

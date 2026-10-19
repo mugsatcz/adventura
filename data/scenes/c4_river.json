@@ -1,0 +1,68 @@
+{
+  "title": "SCENE_C4_RIVER",
+  "background": "res://art/scenes/c4_river.png",
+  "placeholder_color": "#7fb2c9",
+  "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
+  "depth_scale": [740, 900, 0.85, 1.0],
+  "lili_start": [260, 830],
+  "entries": {"c4_village": [260, 830], "c4_camp": [1700, 830]},
+  "hotspots": [
+    {
+      "id": "exit_village",
+      "name": "HS_C4_RIVER_EXIT_VILLAGE",
+      "polygon": [[0, 350], [190, 350], [190, 880], [0, 880]],
+      "walk_to": [150, 820],
+      "exit": "c4_village"
+    },
+    {
+      "id": "canoe",
+      "name": "HS_C4_RIVER_CANOE",
+      "polygon": [[750, 560], [1150, 560], [1150, 740], [750, 740]],
+      "walk_to": [900, 800],
+      "interact": [{"if": "canoe_fixed", "then": "SAY_CANOE_OK", "else": "SAY_CANOE_HOLE"}],
+      "use": {
+        "warm_pitch": [{"take": "warm_pitch"}, {"set": "canoe_fixed"}, {"say": "SAY_CANOE_FIX"}],
+        "paddle": [
+          {
+            "if": "canoe_fixed",
+            "then": [{"say": "SAY_CROSS"}, {"goto": "c4_camp"}],
+            "else": "SAY_CANOE_HOLE_FIRST"
+          }
+        ]
+      }
+    },
+    {
+      "id": "beaver",
+      "name": "HS_C4_RIVER_BEAVER",
+      "polygon": [[1400, 560], [1620, 560], [1620, 740], [1400, 740]],
+      "walk_to": [1350, 800],
+      "interact": "SAY_BEAVER_LOOK",
+      "use": {
+        "dry_branch": [
+          {
+            "once": "got_paddle",
+            "do": [{"take": "dry_branch"}, {"give": "paddle"}, {"say": "SAY_BEAVER_TRADE"}],
+            "else": "SAY_BEAVER_DONE"
+          }
+        ]
+      }
+    }
+  ],
+  "hints": [
+    {
+      "id": "ri_paddle",
+      "if": "!has:paddle",
+      "keys": ["HINT_RI_PADDLE_1", "HINT_RI_PADDLE_2", "HINT_RI_PADDLE_3"]
+    },
+    {
+      "id": "ri_canoe",
+      "if": "has:paddle & !canoe_fixed",
+      "keys": ["HINT_RI_CANOE_1", "HINT_RI_CANOE_2", "HINT_RI_CANOE_3"]
+    },
+    {
+      "id": "ri_cross",
+      "if": "has:paddle & canoe_fixed",
+      "keys": ["HINT_RI_CROSS_1", "HINT_RI_CROSS_2", "HINT_RI_CROSS_3"]
+    }
+  ]
+}

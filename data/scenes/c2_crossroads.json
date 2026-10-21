@@ -1,6 +1,7 @@
 {
   "title": "SCENE_C2_CROSSROADS",
   "background": "res://art/scenes/c2_crossroads.png",
+  "background_alt": {"if": "took_branch", "path": "res://art/scenes/c2_crossroads_nobranch.png"},
   "placeholder_color": "#c99a5b",
   "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
   "depth_scale": [740, 900, 0.85, 1.0],
@@ -73,8 +74,8 @@
       "id": "branch",
       "name": "HS_BRANCH",
       "if": "!took_branch",
-      "polygon": [[1690, 340], [1840, 340], [1840, 520], [1690, 520]],
-      "walk_to": [1640, 780],
+      "polygon": [[960, 790], [1400, 790], [1400, 925], [960, 925]],
+      "walk_to": [1180, 840],
       "interact": [{"set": "took_branch"}, {"give": "dry_branch"}, {"say": "SAY_TAKE_BRANCH"}]
     }
   ],

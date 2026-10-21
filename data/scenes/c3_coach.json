@@ -2,30 +2,39 @@
   "title": "SCENE_C3_COACH",
   "background": "res://art/scenes/c3_coach.png",
   "placeholder_color": "#a9856a",
-  "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
-  "depth_scale": [740, 900, 0.85, 1.0],
-  "lili_start": [260, 830],
-  "entries": {"c3_platform": [260, 830], "c3_dining": [1700, 830], "c3_cattle": [1000, 830]},
+  "walk_area": [[60, 800], [1860, 800], [1880, 930], [40, 930]],
+  "depth_scale": [
+    800,
+    930,
+    0.85,
+    1.0
+  ],
+  "lili_start": [260, 880],
+  "entries": {
+    "c3_platform": [260, 880],
+    "c3_dining": [1700, 880],
+    "c3_cattle": [960, 880]
+  },
   "hotspots": [
     {
       "id": "exit_platform",
       "name": "HS_C3_COACH_EXIT_PLATFORM",
-      "polygon": [[0, 350], [190, 350], [190, 880], [0, 880]],
-      "walk_to": [150, 820],
+      "polygon": [[0, 170], [190, 170], [190, 860], [0, 860]],
+      "walk_to": [150, 880],
       "exit": "c3_platform"
     },
     {
       "id": "exit_dining",
       "name": "HS_C3_COACH_EXIT_DINING",
-      "polygon": [[1730, 350], [1920, 350], [1920, 880], [1730, 880]],
-      "walk_to": [1780, 820],
+      "polygon": [[1760, 170], [1920, 170], [1920, 860], [1760, 860]],
+      "walk_to": [1780, 880],
       "exit": "c3_dining"
     },
     {
       "id": "exit_cattle",
       "name": "HS_C3_COACH_EXIT_CATTLE",
-      "polygon": [[900, 380], [1100, 380], [1100, 740], [900, 740]],
-      "walk_to": [1000, 800],
+      "polygon": [[870, 293], [1050, 293], [1050, 770], [870, 770]],
+      "walk_to": [960, 830],
       "exit": "c3_cattle",
       "exit_if": "conductor_open",
       "blocked": "SAY_CATTLE_LOCKED"
@@ -33,12 +42,19 @@
     {
       "id": "seat",
       "name": "HS_C3_COACH_SEAT",
-      "polygon": [[480, 520], [700, 520], [700, 720], [480, 720]],
-      "walk_to": [590, 790],
+      "polygon": [[455, 551], [820, 551], [820, 798], [455, 798]],
+      "walk_to": [640, 880],
       "interact": [
         {
           "once": "got_scrap",
-          "do": [{"give": "map_scrap"}, {"say": "SAY_SEAT_SCRAP"}],
+          "do": [
+            {
+              "give": "map_scrap"
+            },
+            {
+              "say": "SAY_SEAT_SCRAP"
+            }
+          ],
           "else": "SAY_SEAT_DONE"
         }
       ]
@@ -46,38 +62,78 @@
     {
       "id": "granny",
       "name": "HS_C3_COACH_GRANNY",
-      "polygon": [[1250, 420], [1450, 420], [1450, 740], [1250, 740]],
-      "walk_to": [1350, 800],
+      "polygon": [[1160, 459], [1350, 459], [1350, 815], [1160, 815]],
+      "walk_to": [1255, 890],
       "interact": [
         {
           "if": "granny_happy",
-          "then": [{"say": "DLG_GRANNY_THANKS", "who": "hedvika"}],
-          "else": [{"say": "DLG_GRANNY_LOST", "who": "hedvika"}]
+          "then": [
+            {
+              "say": "DLG_GRANNY_THANKS",
+              "who": "hedvika"
+            }
+          ],
+          "else": [
+            {
+              "say": "DLG_GRANNY_LOST",
+              "who": "hedvika"
+            }
+          ]
         }
       ],
       "use": {
         "glasses": [
-          {"take": "glasses"},
-          {"give": "tickets"},
-          {"set": "granny_happy"},
-          {"say": "DLG_GRANNY_GIVE", "who": "hedvika"}
+          {
+            "take": "glasses"
+          },
+          {
+            "give": "tickets"
+          },
+          {
+            "set": "granny_happy"
+          },
+          {
+            "say": "DLG_GRANNY_GIVE",
+            "who": "hedvika"
+          }
         ]
       }
     },
     {
       "id": "conductor",
       "name": "HS_C3_COACH_CONDUCTOR",
-      "polygon": [[1500, 420], [1680, 420], [1680, 740], [1500, 740]],
-      "walk_to": [1560, 800],
+      "polygon": [[1539, 367], [1734, 367], [1734, 833], [1539, 833]],
+      "walk_to": [1500, 890],
       "interact": [
         {
           "if": "conductor_open",
-          "then": [{"say": "DLG_PEPIK_OK", "who": "pepik"}],
-          "else": [{"say": "DLG_PEPIK_STERN", "who": "pepik"}]
+          "then": [
+            {
+              "say": "DLG_PEPIK_OK",
+              "who": "pepik"
+            }
+          ],
+          "else": [
+            {
+              "say": "DLG_PEPIK_STERN",
+              "who": "pepik"
+            }
+          ]
         }
       ],
       "use": {
-        "tickets": [{"take": "tickets"}, {"set": "conductor_open"}, {"say": "DLG_PEPIK_UNLOCK", "who": "pepik"}]
+        "tickets": [
+          {
+            "take": "tickets"
+          },
+          {
+            "set": "conductor_open"
+          },
+          {
+            "say": "DLG_PEPIK_UNLOCK",
+            "who": "pepik"
+          }
+        ]
       }
     }
   ],
@@ -85,12 +141,20 @@
     {
       "id": "co_ticket",
       "if": "!conductor_open & !has:tickets",
-      "keys": ["HINT_CO_TICKET_1", "HINT_CO_TICKET_2", "HINT_CO_TICKET_3"]
+      "keys": [
+        "HINT_CO_TICKET_1",
+        "HINT_CO_TICKET_2",
+        "HINT_CO_TICKET_3"
+      ]
     },
     {
       "id": "co_pepik",
       "if": "!conductor_open & has:tickets",
-      "keys": ["HINT_CO_PEPIK_1", "HINT_CO_PEPIK_2", "HINT_CO_PEPIK_3"]
+      "keys": [
+        "HINT_CO_PEPIK_1",
+        "HINT_CO_PEPIK_2",
+        "HINT_CO_PEPIK_3"
+      ]
     }
   ]
 }

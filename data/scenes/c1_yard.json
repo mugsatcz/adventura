@@ -10,14 +10,14 @@
     {
       "id": "exit_stable",
       "name": "HS_EXIT_STABLE",
-      "polygon": [[1650, 150], [1920, 150], [1920, 880], [1650, 880]],
+      "polygon": [[1650, 200], [1920, 200], [1920, 880], [1650, 880]],
       "walk_to": [1780, 820],
       "exit": "c1_stable"
     },
     {
       "id": "exit_town",
       "name": "HS_EXIT_TOWN",
-      "polygon": [[0, 600], [330, 600], [330, 900], [0, 900]],
+      "polygon": [[0, 220], [340, 220], [340, 700], [0, 700]],
       "walk_to": [140, 820],
       "exit": "c1_street",
       "exit_if": "has:footprint_copy",
@@ -26,15 +26,15 @@
     {
       "id": "grandpa",
       "name": "HS_JOE",
-      "polygon": [[1225, 410], [1630, 410], [1630, 850], [1225, 850]],
-      "walk_to": [1190, 880],
+      "polygon": [[1200, 380], [1400, 380], [1400, 620], [1200, 620]],
+      "walk_to": [1300, 760],
       "interact": [{"dialogue": "joe"}]
     },
     {
       "id": "well",
       "name": "HS_WELL",
-      "polygon": [[70, 285], [500, 285], [500, 700], [70, 700]],
-      "walk_to": [420, 770],
+      "polygon": [[400, 150], [760, 150], [760, 590], [400, 590]],
+      "walk_to": [520, 760],
       "interact": "LOOK_WELL",
       "use": {
         "bucket": [{"take": "bucket"}, {"give": "bucket_water"}, {"say": "SAY_WELL_FILL"}],
@@ -45,15 +45,15 @@
       "id": "bucket",
       "name": "HS_BUCKET",
       "if": "!took_bucket",
-      "polygon": [[447, 670], [625, 670], [625, 800], [447, 800]],
-      "walk_to": [540, 840],
+      "polygon": [[640, 550], [740, 550], [740, 635], [640, 635]],
+      "walk_to": [700, 760],
       "interact": [{"set": "took_bucket"}, {"give": "bucket"}, {"say": "SAY_TAKE_BUCKET"}]
     },
     {
       "id": "fire",
       "name": "HS_FIRE",
-      "polygon": [[650, 600], [1150, 600], [1150, 860], [650, 860]],
-      "walk_to": [900, 890],
+      "polygon": [[860, 440], [1100, 440], [1100, 670], [860, 670]],
+      "walk_to": [980, 760],
       "interact": [
         {"if": "!fire_out", "then": "SAY_FIRE_HOT", "else": [
           {"once": "got_charcoal", "do": [{"give": "charcoal"}, {"say": "SAY_FIRE_TAKE"}], "else": "SAY_FIRE_DONE"}

@@ -115,10 +115,15 @@ func _refresh() -> void:
 	ui.set_inventory(Game.state.inventory, Game.data.items)
 	if room:
 		room.set_hotspots(rules.hotspots())
-		var alt: Dictionary = room.data.get("background_alt", {})
+		# background_alt: one {if, path} or a list of them, the first match wins
+		var alts: Variant = room.data.get("background_alt", [])
+		if alts is Dictionary:
+			alts = [alts]
 		var path := String(room.data.get("background", ""))
-		if not alt.is_empty() and Game.state.check(alt.get("if", "")):
-			path = String(alt.get("path", path))
+		for alt in alts:
+			if Game.state.check(alt.get("if", "")):
+				path = String(alt.get("path", path))
+				break
 		if path != room.background_path:
 			room.background_path = path
 			room.set_background(_texture(path))

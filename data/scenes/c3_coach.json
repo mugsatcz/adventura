@@ -9,18 +9,18 @@
     0.85,
     1.0
   ],
-  "lili_start": [260, 880],
+  "lili_start": [960, 880],
   "entries": {
-    "c3_platform": [260, 880],
+    "c3_platform": [960, 880],
     "c3_dining": [1700, 880],
-    "c3_cattle": [960, 880]
+    "c3_cattle": [260, 880]
   },
   "hotspots": [
     {
       "id": "exit_platform",
       "name": "HS_C3_COACH_EXIT_PLATFORM",
-      "polygon": [[0, 170], [190, 170], [190, 860], [0, 860]],
-      "walk_to": [150, 880],
+      "polygon": [[870, 293], [1050, 293], [1050, 770], [870, 770]],
+      "walk_to": [960, 830],
       "exit": "c3_platform"
     },
     {
@@ -33,8 +33,8 @@
     {
       "id": "exit_cattle",
       "name": "HS_C3_COACH_EXIT_CATTLE",
-      "polygon": [[870, 293], [1050, 293], [1050, 770], [870, 770]],
-      "walk_to": [960, 830],
+      "polygon": [[0, 170], [190, 170], [190, 860], [0, 860]],
+      "walk_to": [150, 880],
       "exit": "c3_cattle",
       "exit_if": "conductor_open",
       "blocked": "SAY_CATTLE_LOCKED"

@@ -2,10 +2,10 @@
   "title": "SCENE_C3_CATTLE",
   "background": "res://art/scenes/c3_cattle.png",
   "placeholder_color": "#8a6b4c",
-  "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
-  "depth_scale": [740, 900, 0.85, 1.0],
-  "lili_start": [260, 830],
-  "entries": {"c3_coach": [260, 830]},
+  "walk_area": [[120, 780], [1860, 780], [1880, 930], [40, 930]],
+  "depth_scale": [780, 930, 0.85, 1.0],
+  "lili_start": [260, 860],
+  "entries": {"c3_coach": [260, 860]},
   "cutscenes": {
     "peek": [
       {
@@ -22,30 +22,30 @@
     {
       "id": "exit_coach",
       "name": "HS_C3_CATTLE_EXIT_COACH",
-      "polygon": [[0, 350], [190, 350], [190, 880], [0, 880]],
-      "walk_to": [150, 820],
+      "polygon": [[0, 115], [230, 115], [230, 780], [0, 780]],
+      "walk_to": [190, 860],
       "exit": "c3_coach"
     },
     {
       "id": "crack",
       "name": "HS_C3_CATTLE_CRACK",
-      "polygon": [[1000, 400], [1160, 400], [1160, 560], [1000, 560]],
-      "walk_to": [1080, 800],
+      "polygon": [[980, 340], [1210, 340], [1210, 440], [980, 440]],
+      "walk_to": [1090, 830],
       "interact": [{"once": "peeked", "do": [{"cutscene": "peek"}], "else": "SAY_CRACK_AGAIN"}]
     },
     {
       "id": "crate",
       "name": "HS_C3_CATTLE_CRATE",
-      "polygon": [[500, 560], [780, 560], [780, 740], [500, 740]],
-      "walk_to": [640, 800],
+      "polygon": [[470, 545], [865, 545], [865, 760], [470, 760]],
+      "walk_to": [670, 830],
       "interact": [{"once": "crate_moved", "do": [{"say": "SAY_CRATE_MOVE"}], "else": "SAY_CRATE_DONE"}]
     },
     {
       "id": "hook",
       "name": "HS_C3_CATTLE_HOOK",
       "if": "peeked",
-      "polygon": [[1350, 380], [1500, 380], [1500, 520], [1350, 520]],
-      "walk_to": [1420, 800],
+      "polygon": [[1740, 260], [1920, 260], [1920, 540], [1740, 540]],
+      "walk_to": [1700, 870],
       "interact": [
         {
           "if": "crate_moved",

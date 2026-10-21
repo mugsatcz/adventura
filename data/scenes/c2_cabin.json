@@ -1,7 +1,10 @@
 {
   "title": "SCENE_C2_CABIN",
   "background": "res://art/scenes/c2_cabin.png",
-  "background_alt": {"if": "cabin_inside", "path": "res://art/scenes/c2_cabin_inside.png"},
+  "background_alt": [
+    {"if": "cabin_inside", "path": "res://art/scenes/c2_cabin_inside.png"},
+    {"if": "barrel_moved", "path": "res://art/scenes/c2_cabin_barrel_moved.png"}
+  ],
   "placeholder_color": "#7a5a3a",
   "walk_area": [[200, 740], [1700, 740], [1800, 900], [100, 900]],
   "depth_scale": [740, 900, 0.85, 1.0],

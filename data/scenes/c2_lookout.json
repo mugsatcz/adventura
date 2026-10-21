@@ -1,6 +1,7 @@
 {
   "title": "SCENE_C2_LOOKOUT",
-  "background": "res://art/scenes/c2_lookout.png",
+  "background": "res://art/scenes/c2_lookout_closed.png",
+  "background_alt": {"if": "spring_open", "path": "res://art/scenes/c2_lookout.png"},
   "placeholder_color": "#8fb07a",
   "walk_area": [[100, 740], [1820, 740], [1860, 900], [60, 900]],
   "depth_scale": [740, 900, 0.85, 1.0],

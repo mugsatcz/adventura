@@ -1,16 +1,44 @@
 class_name Lili
 extends Node2D
-## Lili, drawn with simple shapes until the real sprite sheet exists. Origin is at her feet.
+## Lili: sprite frames from art/characters (idle + 8 walk frames facing right), simple shapes if they are missing.
+## Origin is at her feet; the node is flipped to face left.
 
 signal arrived(ok: bool)
 
 const SPEED := 460.0
+const WALK_FRAMES := 8
+const WALK_FPS := 10.0
+const SPRITE_SCALE := 1.3
 
 ## [y_far, y_near, scale_far, scale_near]: Lili gets smaller further up the screen.
 var depth: Array = [700.0, 900.0, 0.85, 1.0]
 var _path := PackedVector2Array()
 var _facing := 1.0
 var _anim := 0.0
+var _sprite: Sprite2D
+var _idle: Texture2D
+var _walk: Array[Texture2D] = []
+
+
+func _ready() -> void:
+	_idle = _load("res://art/characters/lili_idle.png")
+	for i in WALK_FRAMES:
+		var t := _load("res://art/characters/lili_walk_%d.png" % i)
+		if t == null:
+			_walk.clear()
+			break
+		_walk.append(t)
+	if _idle and not _walk.is_empty():
+		_sprite = Sprite2D.new()
+		_sprite.texture = _idle
+		_sprite.centered = false
+		_sprite.offset = Vector2(-_idle.get_width() / 2.0, -_idle.get_height())
+		_sprite.scale = Vector2.ONE * SPRITE_SCALE
+		add_child(_sprite)
+
+
+func _load(path: String) -> Texture2D:
+	return load(path) if ResourceLoader.exists(path) else null
 
 
 func place(p: Vector2) -> void:
@@ -44,8 +72,12 @@ func face(x: float) -> void:
 
 func _process(delta: float) -> void:
 	if _path.is_empty():
+		if _sprite:
+			_sprite.texture = _idle
 		return
 	_anim += delta
+	if _sprite:
+		_sprite.texture = _walk[int(_anim * WALK_FPS) % WALK_FRAMES]
 	var target := _path[0]
 	var step := SPEED * absf(scale.y) * delta
 	var to := target - position
@@ -68,6 +100,8 @@ func _apply_scale() -> void:
 
 
 func _draw() -> void:
+	if _sprite:
+		return
 	var bob := sin(_anim * 16.0) * 5.0 if is_walking() else 0.0
 	var step := sin(_anim * 16.0) * 8.0 if is_walking() else 0.0
 	var boots := Color("#5b3a1e")

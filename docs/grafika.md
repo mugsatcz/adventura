@@ -8,6 +8,6 @@
 | Obrázek cutscény | 1920×1080 px, 16:9, PNG | cesta podle `image` v dané cutscéně |
 
 - Spodních asi 150 px zakrývá lišta s inventářem a titulky.
-- Lili chodí po pásu zhruba y 720 až 900. Na pozadí nemají být postavy ani text.
+- Lili je sprite ze `art/characters` (stání + 8 snímků chůze doprava, doleva se zrcadlí). Chodí po pásu zhruba y 720 až 900. Na pozadí nemají být postavy ani text.
 - Klikací místa jsou v JSON a po vložení nového obrázku se jejich polygony upraví podle něj.
 - Obrázek, který není 16:9, se před vložením ořízne.

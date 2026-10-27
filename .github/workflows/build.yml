@@ -1,9 +1,8 @@
 name: Build
 
+# Automatic runs are switched off (Actions credits ran out); run by hand with workflow_dispatch.
+# To turn them back on, restore the push and pull_request triggers.
 on:
-  push:
-    branches: ["**"]
-  pull_request:
   workflow_dispatch:
 
 env:

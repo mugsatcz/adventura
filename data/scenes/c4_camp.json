@@ -17,8 +17,8 @@
     {
       "id": "boots",
       "name": "HS_C4_CAMP_BOOTS",
-      "polygon": [[700, 620], [900, 620], [900, 740], [700, 740]],
-      "walk_to": [800, 800],
+      "polygon": [[900, 590], [1020, 590], [1020, 700], [900, 700]],
+      "walk_to": [960, 790],
       "interact": [
         {
           "once": "got_suitcase_key",
@@ -39,8 +39,8 @@
     {
       "id": "suitcase",
       "name": "HS_C4_CAMP_SUITCASE",
-      "polygon": [[1000, 580], [1250, 580], [1250, 740], [1000, 740]],
-      "walk_to": [1120, 800],
+      "polygon": [[1065, 575], [1310, 575], [1310, 700], [1065, 700]],
+      "walk_to": [1190, 790],
       "interact": "SAY_SUITCASE_LOCKED",
       "use": {
         "suitcase_key": [
@@ -55,8 +55,8 @@
     {
       "id": "poster",
       "name": "HS_C4_CAMP_POSTER",
-      "polygon": [[1350, 420], [1520, 420], [1520, 640], [1350, 640]],
-      "walk_to": [1420, 790],
+      "polygon": [[1440, 285], [1560, 285], [1560, 445], [1440, 445]],
+      "walk_to": [1500, 790],
       "interact": [
         {
           "once": "poster_read",

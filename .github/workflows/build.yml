@@ -1,9 +1,8 @@
 name: Build
 
+# Automatic runs are switched off (Actions credits ran out); run by hand with workflow_dispatch.
+# To turn them back on, restore the push and pull_request triggers.
 on:
-  push:
-    branches: ["**"]
-  pull_request:
   workflow_dispatch:
 
 env:
@@ -27,6 +26,8 @@ jobs:
         run: ./godot --headless --path . -- --smoke
 
   android:
+    # APK build is switched off for now; remove the next line to turn it back on
+    if: false
     needs: tests
     runs-on: ubuntu-latest
     steps:

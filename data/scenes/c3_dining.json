@@ -1,24 +1,25 @@
 {
   "title": "SCENE_C3_DINING",
   "background": "res://art/scenes/c3_dining.png",
+  "background_alt": {"if": "parrot_gave", "path": "res://art/scenes/c3_dining_noglasses.png"},
   "placeholder_color": "#b9774f",
-  "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
-  "depth_scale": [740, 900, 0.85, 1.0],
-  "lili_start": [260, 830],
-  "entries": {"c3_coach": [260, 830]},
+  "walk_area": [[60, 760], [1860, 760], [1880, 930], [40, 930]],
+  "depth_scale": [760, 930, 0.85, 1.0],
+  "lili_start": [380, 860],
+  "entries": {"c3_coach": [380, 860]},
   "hotspots": [
     {
       "id": "exit_coach",
       "name": "HS_C3_DINING_EXIT_COACH",
-      "polygon": [[0, 350], [190, 350], [190, 880], [0, 880]],
-      "walk_to": [150, 820],
+      "polygon": [[70, 170], [380, 170], [380, 670], [70, 670]],
+      "walk_to": [330, 880],
       "exit": "c3_coach"
     },
     {
       "id": "cook",
       "name": "HS_C3_DINING_COOK",
-      "polygon": [[500, 420], [760, 420], [760, 740], [500, 740]],
-      "walk_to": [630, 800],
+      "polygon": [[595, 235], [770, 235], [770, 445], [595, 445]],
+      "walk_to": [700, 850],
       "interact": [
         {
           "if": "got_biscuit",
@@ -37,10 +38,10 @@
     {
       "id": "parrot",
       "name": "HS_C3_DINING_PARROT",
-      "polygon": [[1150, 380], [1350, 380], [1350, 560], [1150, 560]],
-      "walk_to": [1250, 800],
+      "polygon": [[1465, 0], [1585, 0], [1585, 240], [1465, 240]],
+      "walk_to": [1520, 880],
       "interact": "SAY_PARROT_LOOK",
-      "use": {"biscuit": [{"take": "biscuit"}, {"give": "glasses"}, {"say": "SAY_PARROT_DROP"}]}
+      "use": {"biscuit": [{"take": "biscuit"}, {"give": "glasses"}, {"set": "parrot_gave"}, {"say": "SAY_PARROT_DROP"}]}
     }
   ],
   "hints": [

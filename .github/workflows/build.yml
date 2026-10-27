@@ -27,6 +27,8 @@ jobs:
         run: ./godot --headless --path . -- --smoke
 
   android:
+    # APK build is switched off for now; remove the next line to turn it back on
+    if: false
     needs: tests
     runs-on: ubuntu-latest
     steps:

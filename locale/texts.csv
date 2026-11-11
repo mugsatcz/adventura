@@ -295,6 +295,7 @@ SCENE_C3_STATION,Nádraží
 SAY_DEKA_TAKE,"Hromova deka! Je tady, tak je Hrom někde blízko."
 SAY_DEKA_DONE,Deku už mám.
 HS_C3_PLATFORM_BLANKET,Deka na zábradlí
+SAY_COACH_DEKA_FIRST,"Počkat. Nejdřív vezmu Hromovu deku ze zábradlí, bez ní by se Hrom neuklidnil."
 SAY_COACH_DOOR_LOCKED,Dveře jsou zamčené. Něco tenkého by je možná otevřelo.
 HS_C3_PLATFORM_WIRE,Klubko drátu
 SAY_PLATFORM_WIRE,"Na zdi vagónu visí klubko drátu. Ukrojím si kousek, možná se bude hodit."
@@ -303,6 +304,9 @@ HS_C3_PLATFORM_EXIT_COACH,Dveře do vagónu
 HINT_PL_DOOR_1,Dveře do vagónu jsou zamčené.
 HINT_PL_DOOR_2,Zloději otevřeli stájovou západku tenkým předmětem.
 HINT_PL_DOOR_3,Přetáhni drát na dveře do vagónu.
+HINT_PL_DEKA_1,Na plošině ještě něco zůstalo.
+HINT_PL_DEKA_2,Na zábradlí visí deka. Hrom by ji poznal.
+HINT_PL_DEKA_3,Ťukni na deku na zábradlí a vezmi ji.
 SCENE_C3_PLATFORM,Plošina vagónu
 HS_C3_COACH_EXIT_PLATFORM,Zpět na plošinu
 HS_C3_COACH_EXIT_DINING,Do jídelního vozu

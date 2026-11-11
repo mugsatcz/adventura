@@ -36,8 +36,8 @@
       "polygon": [[850, 255], [1000, 255], [1000, 640], [850, 640]],
       "walk_to": [925, 645],
       "exit": "c3_coach",
-      "exit_if": "door_open",
-      "blocked": "SAY_COACH_DOOR_LOCKED",
+      "exit_if": "door_open & got_deka",
+      "blocked": [{"if": "door_open", "then": "SAY_COACH_DEKA_FIRST", "else": "SAY_COACH_DOOR_LOCKED"}],
       "use": {"wire": [{"set": "door_open"}, {"say": "SAY_COACH_DOOR_PICK"}]}
     }
   ],
@@ -46,6 +46,11 @@
       "id": "pl_door",
       "if": "!door_open",
       "keys": ["HINT_PL_DOOR_1", "HINT_PL_DOOR_2", "HINT_PL_DOOR_3"]
+    },
+    {
+      "id": "pl_deka",
+      "if": "door_open & !got_deka",
+      "keys": ["HINT_PL_DEKA_1", "HINT_PL_DEKA_2", "HINT_PL_DEKA_3"]
     }
   ]
 }

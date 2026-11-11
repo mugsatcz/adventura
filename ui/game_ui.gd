@@ -17,6 +17,7 @@ const DRAG_START := 24.0
 
 var _root: Control
 var _bar: PanelContainer
+var _scroll: ScrollContainer
 var _slots_box: HBoxContainer
 var _slots: Dictionary = {}
 var _hint_button: Button
@@ -37,6 +38,7 @@ var _say_token := 0
 var _press_item := ""
 var _press_pos := Vector2.ZERO
 var _dragging := false
+var _scrolling := false
 var _selected := ""
 
 
@@ -133,13 +135,23 @@ func _on_slot_input(event: InputEvent, item: String) -> void:
 		_press_item = item
 		_press_pos = event.global_position
 		_dragging = false
+		_scrolling = false
 
 
 func _input(event: InputEvent) -> void:
 	if _press_item == "":
 		return
 	if event is InputEventMouseMotion:
+		if _scrolling:
+			# Swiping sideways over the bar scrolls it; the press is not an item drag or tap.
+			_scroll.scroll_horizontal -= int(event.relative.x)
+			return
 		if not _dragging and event.position.distance_to(_press_pos) > DRAG_START:
+			var delta: Vector2 = event.position - _press_pos
+			if absf(delta.x) > absf(delta.y):
+				_scrolling = true
+				_scroll.scroll_horizontal -= int(delta.x)
+				return
 			_dragging = true
 			var slot: Panel = _slots.get(_press_item)
 			if slot:
@@ -151,7 +163,9 @@ func _input(event: InputEvent) -> void:
 		var item := _press_item
 		_press_item = ""
 		_ghost.hide()
-		if not _dragging:
+		if _scrolling:
+			pass
+		elif not _dragging:
 			item_tapped.emit(item)
 		else:
 			var other := _slot_at(event.position)
@@ -160,6 +174,7 @@ func _input(event: InputEvent) -> void:
 			elif other != item:
 				items_combined.emit(item, other)
 		_dragging = false
+		_scrolling = false
 		get_viewport().set_input_as_handled()
 
 
@@ -310,10 +325,17 @@ func _build_inventory_bar() -> void:
 	_bar.offset_top = -BAR_H
 	_bar.add_theme_stylebox_override("panel", _box(Color(0.12, 0.08, 0.05, 0.85), 0))
 	_root.add_child(_bar)
+	# Scrolls sideways when there are more items than fit; the box fills the bar so few items stay centred.
+	_scroll = ScrollContainer.new()
+	_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
+	_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	_bar.add_child(_scroll)
 	_slots_box = HBoxContainer.new()
 	_slots_box.alignment = BoxContainer.ALIGNMENT_CENTER
+	_slots_box.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_slots_box.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	_slots_box.add_theme_constant_override("separation", 14)
-	_bar.add_child(_slots_box)
+	_scroll.add_child(_slots_box)
 
 
 func _build_hint_button() -> void:

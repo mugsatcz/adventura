@@ -2,10 +2,10 @@
   "title": "SCENE_C4_VILLAGE",
   "background": "res://art/scenes/c4_village.png",
   "placeholder_color": "#d9a45a",
-  "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
-  "depth_scale": [740, 900, 0.85, 1.0],
-  "lili_start": [900, 820],
-  "entries": {"c3_cattle": [900, 820], "c4_chief": [260, 830], "c4_river": [1700, 830]},
+  "walk_area": [[60, 760], [1860, 760], [1880, 930], [40, 930]],
+  "depth_scale": [760, 930, 0.85, 1.0],
+  "lili_start": [900, 850],
+  "entries": {"c3_cattle": [900, 850], "c4_chief": [560, 830], "c4_river": [960, 790]},
   "on_enter": [{"once": "c4_intro_seen", "do": [{"cutscene": "intro"}]}],
   "cutscenes": {
     "intro": [
@@ -23,30 +23,30 @@
     {
       "id": "exit_chief",
       "name": "HS_C4_VILLAGE_EXIT_CHIEF",
-      "polygon": [[0, 350], [190, 350], [190, 880], [0, 880]],
-      "walk_to": [150, 820],
+      "polygon": [[230, 300], [780, 300], [780, 660], [230, 660]],
+      "walk_to": [560, 830],
       "exit": "c4_chief"
     },
     {
       "id": "exit_river",
       "name": "HS_C4_VILLAGE_EXIT_RIVER",
-      "polygon": [[1730, 350], [1920, 350], [1920, 880], [1730, 880]],
-      "walk_to": [1780, 820],
+      "polygon": [[800, 440], [1100, 440], [1100, 530], [800, 530]],
+      "walk_to": [960, 790],
       "exit": "c4_river"
     },
     {
       "id": "fire",
       "name": "HS_C4_VILLAGE_FIRE",
-      "polygon": [[800, 600], [1060, 600], [1060, 720], [800, 720]],
-      "walk_to": [930, 790],
+      "polygon": [[940, 590], [1110, 590], [1110, 690], [940, 690]],
+      "walk_to": [1030, 790],
       "interact": "SAY_VILLAGE_FIRE",
       "use": {"hard_pitch": [{"take": "hard_pitch"}, {"give": "warm_pitch"}, {"say": "SAY_PITCH_WARM"}]}
     },
     {
       "id": "jelen",
       "name": "HS_C4_VILLAGE_JELEN",
-      "polygon": [[1300, 420], [1480, 420], [1480, 720], [1300, 720]],
-      "walk_to": [1250, 800],
+      "polygon": [[1110, 450], [1230, 450], [1230, 745], [1110, 745]],
+      "walk_to": [1170, 840],
       "interact": [{"dialogue": "jelen"}]
     }
   ],

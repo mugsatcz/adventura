@@ -434,7 +434,7 @@ SAY_CANOE_HOLE_FIRST,Nejdřív musím opravit díru v kánoi.
 SAY_BEAVER_DONE,Pádlo už mám.
 HS_C4_CAMP_EXIT_RIVER,Zpět k řece
 SAY_BOOT_KEY,V botě je schovaný klíček! Asi od toho kufru.
-SAY_BOOT_DONE,V botě už nic není.
+SAY_BOOT_DONE,"V botě už nic není. Na podrážce jsou ale hvězdičky. Co kdybych je porovnala s obtiskem, který mám?"
 SAY_BOOTS_MATCH,Hvězdičky na podrážce přesně sedí. Tohle jsou boty našich zlodějů!
 SAY_BOOTS_NEED_LUPA,Zblízka to nevidím. Potřebuju lupu.
 HS_C4_CAMP_BOOTS,Boty u ohně
@@ -446,7 +446,7 @@ SAY_POSTER2_1,Velká soutěž o Zlatou podkovu! Dnes v saloonu U Zlaté Podkovy 
 SAY_POSTER2_2,Tak tam vezou Hroma!
 SAY_POSTER2_AGAIN,Soutěž je dnes v saloonu v Red Buffalu.
 HS_C4_CAMP_POSTER,Plakát
-SAY_NEED_PROOF,"Ještě nemám dost důkazů. Musím prohlédnout boty, otevřít kufr a přečíst plakát."
+SAY_NEED_PROOF,"Ještě nemám dost důkazů. Musím porovnat obtisk s botami u ohně (potřebuju k tomu lupu), otevřít kufr klíčkem a přečíst plakát."
 HS_C4_CAMP_EXIT_TOWN,Do Red Buffala
 HINT_CP_BOOTS_1,Boty u ohně mohou být důležité.
 HINT_CP_BOOTS_2,"Porovnej je s obtiskem, který máš. Potřebuješ lupu."

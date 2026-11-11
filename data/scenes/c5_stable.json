@@ -4,8 +4,8 @@
   "placeholder_color": "#a07a56",
   "walk_area": [[60, 740], [1860, 740], [1880, 900], [40, 900]],
   "depth_scale": [740, 900, 0.85, 1.0],
-  "lili_start": [200, 820],
-  "entries": {"c5_town": [200, 820]},
+  "lili_start": [450, 850],
+  "entries": {"c5_town": [450, 850]},
   "cutscenes": {
     "whistle": [
       {
@@ -24,30 +24,30 @@
     {
       "id": "exit_town",
       "name": "HS_C5_STABLE_EXIT_TOWN",
-      "polygon": [[0, 350], [190, 350], [190, 880], [0, 880]],
-      "walk_to": [150, 820],
+      "polygon": [[120, 175], [345, 175], [345, 680], [120, 680]],
+      "walk_to": [260, 780],
       "exit": "c5_town"
     },
     {
       "id": "trough",
       "name": "HS_C5_STABLE_TROUGH",
-      "polygon": [[500, 640], [800, 640], [800, 740], [500, 740]],
-      "walk_to": [650, 800],
+      "polygon": [[575, 515], [920, 515], [920, 685], [575, 685]],
+      "walk_to": [750, 790],
       "interact": "SAY_TROUGH_LOOK",
       "use": {"bucket": [{"take": "bucket"}, {"give": "bucket_water"}, {"say": "SAY_TROUGH_FILL"}]}
     },
     {
       "id": "hooves",
       "name": "HS_C5_STABLE_HOOVES",
-      "polygon": [[1050, 640], [1300, 640], [1300, 740], [1050, 740]],
-      "walk_to": [1180, 800],
+      "polygon": [[880, 790], [1440, 790], [1440, 890], [880, 890]],
+      "walk_to": [1160, 850],
       "interact": [{"set": "hoof_checked"}, {"say": "SAY_HOOVES"}]
     },
     {
       "id": "hrom",
       "name": "HS_C5_STABLE_HROM",
-      "polygon": [[1250, 400], [1600, 400], [1600, 740], [1250, 740]],
-      "walk_to": [1180, 800],
+      "polygon": [[1160, 245], [1560, 245], [1560, 712], [1160, 712]],
+      "walk_to": [1330, 800],
       "interact": [{"if": "hrom_calm", "then": "SAY_HROM_CALM", "else": "SAY_HROM_WILD"}],
       "use": {
         "hromova_deka": [{"set": "hrom_calm"}, {"say": "SAY_HROM_BLANKET"}],
